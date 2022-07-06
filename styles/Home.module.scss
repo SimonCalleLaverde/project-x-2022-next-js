@@ -1,3 +1,6 @@
+// Sass/Scss Variables Example
+$color-primary:blueviolet;//#0070f3
+
 .container {
   padding: 0 2rem;
 }
@@ -29,7 +32,7 @@
 }
 
 .title a {
-  color: #0070f3;
+  color:$color-primary;//#0070f3
   text-decoration: none;
 }
 
@@ -88,8 +91,8 @@
 .card:hover,
 .card:focus,
 .card:active {
-  color: #0070f3;
-  border-color: #0070f3;
+  color:$color-primary;//#0070f3
+  border-color:$color-primary;//#0070f3
 }
 
 .card h2 {
