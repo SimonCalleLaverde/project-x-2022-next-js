@@ -13,7 +13,7 @@
 import { useRouter } from "next/router"
 import Head from "next/head"
 
-// WILL BE THE "PROJECT PAGE"
+// WILL BE THE "PROJECT PAGE" (Project (Page) Component)
 // Car Page (Dynamic) Component
 // Destructuring car 'prop' to use in car component
 export default function Car({ car }) {
