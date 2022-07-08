@@ -8,9 +8,9 @@ import Head from "next/head";//......
 // (WILL BE THE DYNAMIC "ProjectPage" SOON)
 export default function CarPage({ car }) {//Destructuring "car" prop to use in "CarPage" component
 	const router = useRouter()
-	const { id } = router.query//Gets whatever is written in the URL parameter after "/projects/"
+	const { project } = router.query//Gets whatever is written in the URL parameter after "/projects/"
 
-	return <h1>Hello {id}</h1>//"{id}" prints out the URL parameter after "/projects/" (e.g. "/projects/{id}")
+	return <h1>Hello {project}</h1>//"{project}" prints out the URL parameter after "/projects/" (e.g. "/projects/{project}")
 
 
 
@@ -20,7 +20,7 @@ export default function CarPage({ car }) {//Destructuring "car" prop to use in "
 	// 			<title>{car.color} {car.id}</title>
 	// 		</Head>
 
-	// 		<h1>Hello {id}</h1>
+	// 		<h1>Hello {project}</h1>
 
 	// 		<img src={car.image} alt="" width="300px"/>
 	// 	</>
