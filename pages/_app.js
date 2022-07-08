@@ -6,7 +6,7 @@ import "../styles/globals.scss"//import "../styles/main.scss"
 //import "../styles/theme.scss"
 //import "../styles/tablet_and_desktop.scss"
 
-// Main Entry To The App (Everything Starts From Here)
+// Main Entry Point Into The App (Every Individual Page Will Start From This Template)
 export default function ProjectX2022NextJS({ Component, pageProps }) {
   return <Component {...pageProps}/>
 };
