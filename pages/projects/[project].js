@@ -11,6 +11,7 @@ export default function ProjectPage({ car }) {//Destructuring "car" prop to use 
 
 	return (
 		<>
+			{/* <Head/> builds lots of crap already like "<meta charset='utf-8'>", "<meta name='viewport' content='width=device-width'>", some "<script></script>", "<noscript></noscript>", "<style></style>", and so. So to be careful for not repeated stuff */}
 			<Head>
 				<title>{car.color} {car.id}</title>
 				{/* To add meta-tags, etc */}
@@ -24,7 +25,9 @@ export default function ProjectPage({ car }) {//Destructuring "car" prop to use 
 	)
 };
 
-// Fetching Data (On "Build") // Tells Next To Pre-Render Page
+// IMPLEMENTING "STATIC SITE GENERATION" BELOW (WITH "getStaticProps" & "getStaticPaths")
+
+// Fetching Data (On "Build" Time) // Tells Next To Pre-Render Page
 // Sends The Result As Props To The Component Itself
 export async function getStaticProps({ params }) {
 	// Fetching the JSON for an individual car // We need the "id" from the URL to know which car was requested
@@ -41,7 +44,7 @@ export async function getStaticProps({ params }) {
 };
 
 // Tells NextJS Which Dynamic Pages To Render
-export async function getStaticPaths() {//{ params }
+export async function getStaticPaths() {
 	// Can also request data from an API or Data-Base
 	const req = await fetch("http://localhost:3000/cars.json")
 
@@ -60,19 +63,18 @@ export async function getStaticPaths() {//{ params }
 	}
 };
 
+// IMPLEMENTING "SERVER-SIDE RENDERING" BELOW (WITH "getServerSideProps" ONLY) (Still missing "404" pages, they will give an error)
 
-
-// // Fetching Data // At "Request Time" // (On Every Request)
-// // Content is generated on a server when requested by the user
+// // Fetching Data (At "Request" Time) // On Every Request
+// // Content Is Generated On A Server When Requested By The User
 // export async function getServerSideProps({ params }) {
-// 	// Fetching the Json for an individual car // Getting the 'id' from the URL
-// 	const req = await fetch(`http://localhost:3000/${params.id}.json`)
+// 	// Fetching the JSON for an individual car // Getting the "id" from the URL
+// 	const req = await fetch(`http://localhost:3000/${params.project}.json`)
 
-// 	// Converting to Json
+// 	// Converting to JSON
 // 	const data = await req.json()
 
-// 	// Returning an object that has a 'props' property
-// 	// where each 'prop' can then be accessed by the component
+// 	// Returning an object that has a "props" property, where each "prop" can then be accessed by the component
 // 	return {
 // 		props: { car: data },
 // 	}
