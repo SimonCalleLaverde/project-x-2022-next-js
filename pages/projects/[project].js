@@ -7,7 +7,9 @@ import Head from "next/head";
 // Project (Page) (Dynamic) Component
 export default function ProjectPage({ car }) {//Destructuring "car" prop to use here in "ProjectPage" component
 	const router = useRouter()
-	const { project } = router.query//Gets whatever is written in the URL parameter after "/projects/"
+
+	// Gets whatever is written in the URL parameter after "/projects/"
+	const { project } = router.query
 
 	return (
 		<>

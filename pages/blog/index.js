@@ -1,5 +1,4 @@
 // Imports
-//import { Fragment } from "react";//Don't think we need this import
 import Link from "next/link";
 
 // Blog (Page) Component
@@ -17,14 +16,20 @@ export default function BlogPage() {
 
 
 				<li>
-					<Link href="/blog/article-that-loads-the-proper-way-1">
-						Article that loads the proper "NextJS" way (No page load) 1
+					<Link href="/blog/blog-post-1">
+						Blog Post 1: Article that loads the proper "NextJS" way (No page load)
 					</Link>
 				</li>
 
 				<li>
-					<Link href="/blog/article-that-loads-the-proper-way-2">
-						Article that loads the proper "NextJS" way (No page load) 2
+					<Link href="/blog/blog-post-2">
+						Blog Post 2: Article that loads the proper "NextJS" way (No page load)
+					</Link>
+				</li>
+
+				<li>
+					<Link href="/blog/blog-post-3">
+						Blog Post 3: Article that loads the proper "NextJS" way (No page load)
 					</Link>
 				</li>
 
