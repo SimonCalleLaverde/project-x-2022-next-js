@@ -1,4 +1,4 @@
-// TO REVISE
+// TO REVISE // Will be similar to "[project].js"
 
 // EXAMPLE // our-domain.com/blog/[blog-articles]
 
@@ -14,5 +14,5 @@ export default function ArticlePage() {
 	const blogArticles = routerObject.query.blogArticles;
 	// We Could Send A Request To The Backend API To Fetch The News Item With "blogArticles"
 
-	return <h1>Article Page</h1>
+	return <h1>Article (Page) Component</h1>
 };

@@ -1,4 +1,40 @@
+// Imports
+import Link from "next/link";
+
 // Projects (Page) Component
 export default function ProjectsPage() {
-	return <h1>Projects (Page) Component<br/><br/>[Cars List]</h1>
+	return (
+		<>
+			<h1>Projects (Page) Component</h1>
+			
+			<strong>Cars List Temporary 🚗 🚙</strong>
+
+			{/* List will be generated dynamically by maping an array of data into JSX elements */}
+			<ul>
+
+
+
+				<li>
+					<Link href="/projects/tesla">
+						Tesla Car
+					</Link>
+				</li>
+
+				<li>
+					<Link href="/projects/ford">
+						Ford Car
+					</Link>
+				</li>
+
+				<li>
+					<Link href="/projects/lambo">
+						Lambo Car
+					</Link>
+				</li>
+
+
+
+			</ul>
+		</>
+	)
 };
