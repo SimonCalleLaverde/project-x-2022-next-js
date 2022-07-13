@@ -12,7 +12,6 @@ export default function BlogPostPage({ post }) {//Destructuring "post" prop to u
 	//const blogPost = router.query.blogPost
 	const { blogPost } = router.query
 
-	// We could send a request to the backend API to fetch the news item with "blogPost"
 	return (
 		<>
 			{/* <Head/> builds lots of crap already like "<meta charset='utf-8'>", "<meta name='viewport' content='width=device-width'>", some "<script></script>", "<noscript></noscript>", "<style></style>", and so. So to be careful for not repeated stuff */}
