@@ -19,10 +19,12 @@ export default function ProjectPage({ car }) {//Destructuring "car" prop to use 
 				{/* To add meta-tags, etc */}
 			</Head>
 
-			{/* "{project}" prints out the URL parameter after "/projects/" (e.g. "/projects/tesla") */}
-			<h1>Hello {project}</h1>
+			<h1>[Project] (Page) Component</h1>
 
-			<img src={car.image} alt="" width="500"/>{/*300px*/}
+			{/* "{project}" prints out the URL parameter after "/projects/" (e.g. "/projects/tesla") */}
+			<h2>Hello {project}</h2>
+
+			<img src={car.image} alt="" width="400"/>{/*300px*/}
 		</>
 	)
 };
@@ -34,27 +36,27 @@ export default function ProjectPage({ car }) {//Destructuring "car" prop to use 
 export async function getStaticProps({ params }) {
 	// Fetching the JSON for an individual car // We need the "id" from the URL to know which car was requested
 	// Getting that info from the "params" argument in the function // Requesting the JSON file with that "id"
-	const req = await fetch(`http://localhost:3000/${params.project}.json`)
+	const requestProject = await fetch(`http://localhost:3000/${params.project}.json`)
 
 	// Converting to JSON
-	const data = await req.json()
+	const dataJSON1 = await requestProject.json()
 
 	// Returning an object that has a "props" property, where each "prop" can then be accessed by the component
 	return {
-		props: { car: data },
+		props: { car: dataJSON1 },
 	}
 };
 
 // Tells NextJS Which Dynamic Pages To Render
 export async function getStaticPaths() {
 	// Can also request data from an API or Data-Base
-	const req = await fetch("http://localhost:3000/cars.json")
+	const requestAPI = await fetch("http://localhost:3000/cars.json")
 
 	// Converting to JSON
-	const data = await req.json()
+	const dataJSON2 = await requestAPI.json()
 
 	// Returns a "paths" object, that contains an array with every route for this dynamic URL
-	const paths = data.map(car => {
+	const paths = dataJSON2.map(car => {
 		return { params: { project: car } }//id: car
 	})
 
