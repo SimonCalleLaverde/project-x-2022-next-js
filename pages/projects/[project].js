@@ -57,7 +57,9 @@ export async function getStaticPaths() {
 
 	// Returns a "paths" object, that contains an array with every route for this dynamic URL
 	const paths = dataJSON2.map(car => {
-		return { params: { project: car } }//id: car
+		return {
+			params: { project: car }//id: car
+		}
 	})
 
 	// We map our route values (tesla, ford, lambo) to an array of objects (above), then return them from the function, along with additional options like the fallback behavior
