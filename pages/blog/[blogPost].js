@@ -26,28 +26,28 @@ export async function getStaticPaths() {
 	}
 };
 
-
-
 // GET STATIC PROPS
 // Fetches Data (On "Build" Time) & Sends The Result As "Props" To The Page Component (Below)
 export async function getStaticProps({ params }) {
-	// We need the URL parameter or id to know which post was requested (I.e. written-in-the-URL/searched) to fetch the JSON file with that parameter or id
+	// We need the URL parameter (or id) to know which post was requested (i.e. written-in-the-URL/searched) to fetch the JSON file with that parameter
 	// Getting that info from the "params" argument in the function, which comes from "getStaticPaths"
-	const requestBlogPost = await fetch(`http://localhost:3000/${params.blogPost}.json`)// Fetching the JSON for an individual post
+	const requestBlogPost = await fetch(`http://localhost:3000/${params.blogPost}.json`)//Fetching the JSON for an individual post
 
 	// Converting to JSON
-	const dataPropsJSON = await requestBlogPost.json()
+	const dataPropsJSON = await requestBlogPost.json()//postData
 
 	// Returning an object that has a "props" property, where each "prop" can then be accessed by the component
 	return {
-		props: { post: dataPropsJSON },
+		props: {
+			postData: dataPropsJSON//postData
+		}
 	}
 };
 
 
 
 // BlogPost (Page) (Dynamic) Component
-export default function BlogPostPage({ post }) {//Destructuring & passing "post" prop from "getStaticProps" above
+export default function BlogPostPage({ postData }) {//Destructuring & passing "postData" prop from "getStaticProps" above
 	const router = useRouter()
 
 	// Gets whatever is written in the URL parameter after "/projects/" // This will hold the concrete value in the URL for the dynamic segment of the page visited
@@ -57,7 +57,7 @@ export default function BlogPostPage({ post }) {//Destructuring & passing "post"
 	return (
 		<>
 			<Head>
-				<title>{post.title}</title>
+				<title>{postData.title}</title>
 				{/* To add meta-tags, etc. <Head/> builds lots of crap already like "<meta charset='utf-8'>", "<meta name='viewport' content='width=device-width'>", some "<script></script>", "<noscript></noscript>", "<style></style>", and so. So to be careful for not repeated stuff */}
 			</Head>
 
@@ -66,7 +66,7 @@ export default function BlogPostPage({ post }) {//Destructuring & passing "post"
 			{/* "{blogPost}" prints out the URL parameter after "/blog/" (e.g. "/blog/blog-post-1") */}
 			<h2>Hello {blogPost}</h2>
 
-			<img src={post.image} alt="" width="300"/>{/*300px*/}
+			<img src={postData.image} alt="" width="300"/>{/*300px*/}
 		</>
 	)
 };

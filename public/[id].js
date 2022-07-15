@@ -16,11 +16,9 @@ export async function getStaticPaths() {
   }
 };
 
-
-
 // GET STATIC PROPS
 export async function getStaticProps({ params }) {
-  const postData = await getPostData(params.id)//Adding the "await" keyword (to use 'remark' library)
+  const postData = await getPostData(params.id)//Adding the "await" keyword to use remark library
 
   return {
     props: {

@@ -60,43 +60,41 @@ export async function getStaticPaths() {
   }
 };
 
-
-
 // GET STATIC PROPS
 export async function getStaticProps({ params }) {
-  const data = await graphCMSRequestAPI.request(graphCMSQuery, {params.slug});
-  const post = data.post;
+  const requestBlogPost = await graphCMSRequestAPI.request(graphCMSQuery, {params.slug});
+  const postData = requestBlogPost.post;
 
   return {
     props: {
-      post,
-    },
-    revalidate: 10,
+      postData
+    }//,
+    //revalidate: 10
   }
 };
 
 
 
 // BlogPost (Page) (Dynamic) Component
-export default function BlogPost({ post }) {
+export default function BlogPost({ postData }) {
   return (
     <main>
-      <img src={ post.coverPhoto.url } alt=""/>
+      <img src={ postData.coverPhoto.url } alt=""/>
 
       <div>
         <div>
-          <img src={ post.author.avatar.url } alt=""/>
+          <img src={ postData.author.avatar.url } alt=""/>
 
           <div>
-            <h6>By { post.author.name }</h6>
-            <small>{ post.datePublished }</small>
+            <h6>By { postData.author.name }</h6>
+            <small>{ postData.datePublished }</small>
           </div>
         </div>
 
-        <h2>{ post.title }</h2>
+        <h2>{ postData.title }</h2>
       </div>
 
-      <div dangerouslySetInnerHTML={{ __html: post.content.html }}>
+      <div dangerouslySetInnerHTML={{ __html: postData.content.html }}>
       </div>
     </main>
   )
