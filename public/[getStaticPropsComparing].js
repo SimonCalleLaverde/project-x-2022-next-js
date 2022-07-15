@@ -5,12 +5,12 @@ export async function getStaticProps({ params }) {
   const requestBlogPost = await fetch(`http://localhost:3000/${params.blogPost}.json`)// Fetching the JSON for an individual post
 
   // Converting to JSON
-  const dataPropsJSON = await requestBlogPost.json()//postData
+  const postData = await requestBlogPost.json()
 
   // Returning an object that has a "props" property, where each "prop" can then be accessed by the component
   return {
     props: {
-      post: dataPropsJSON//postData
+      postData
     }
   }
 };
