@@ -1,50 +1,53 @@
 // Dynamic Route Result: "/blog/[blogPost]" (E.g: "/blog/blog-post-1", "/blog/blog-post-2", "/blog/blog-post-3")
 
 // Imports
-import { useRouter } from "next/router";
+import { useRouter } from "next/router";//import { GraphQLClient, gql } from "graphql-request";
 import Head from "next/head";
 
-// IMPLEMENTING "STATIC SITE GENERATION" BELOW (WITH "getStaticProps" & "getStaticPaths")
+// IMPLEMENTING "STATIC SITE GENERATION" BELOW (WITH "getStaticPaths" & "getStaticProps")
 
-// Fetches Data (On "Build" Time) & Sends The Result As "Props" To The Page Component (Below)
-export async function getStaticProps({ params }) {
-	// We need the "id" (parameter) from the URL to know which post was requested (written-in-the-URL/searched) to fetch the JSON file with that "id"
-	// Getting that info from the "params" argument in the function, which comes from "getStaticPaths"
-	const requestBlogPost = await fetch(`http://localhost:3000/${params.blogPost}.json`)// Fetching the JSON for an individual post
-
-	// Converting to JSON
-	const dataJSON1 = await requestBlogPost.json()
-
-	// Returning an object that has a "props" property, where each "prop" can then be accessed by the component
-	return {
-		props: { post: dataJSON1 },
-	}
-};
-
-// Tells NextJS Which Dynamic Pages To Render
+// GET STATIC PATHS
+// Because Site Is Generated On The Server, We Don't Have Access To The URLs Beforehand, We Have To Define The Paths Here In Advance To Tell NextJS Which Dynamic Pages Or Paths To Render
 export async function getStaticPaths() {
 	// Can also request data from an API or Data-Base
-	const requestAPI = await fetch("http://localhost:3000/blog_posts.json")
+	const requestPathsAPI = await fetch("http://localhost:3000/blog_posts.json")//["blog-post-1", "blog-post-2", "blog-post-3"]
 
 	// Converting to JSON
-	const dataJSON2 = await requestAPI.json()
+	const dataPathsJSON = await requestPathsAPI.json()
 
-	// Returns a "paths" object, that contains an array with every route for this dynamic URL
-	const paths = dataJSON2.map(post => {
-		return {
-			params: { blogPost: post }//id: post
-		}
-	})
+	// Returns a "paths" object that contains an array with every route (URL parameter)
+	// We map our route values (e.g. "blog-post-1, blog-post-2, blog-post-3") to an array of objects
+	const paths = dataPathsJSON.map(post => { params: { blogPost: post } })//id: post
 
-	// We map our route values (blog-post-1, blog-post-2, blog-post-3) to an array of objects (above), then return them from the function, along with additional options like the fallback behavior
+	// Then return them from the function, along with additional options like the fallback behavior
 	return {
-		paths,
+		paths,//This is same than "paths: paths"
 		fallback: false//Ensures a URL that doesn't exist in the paths, redirects to a "404" page
 	}
 };
 
+
+
+// GET STATIC PROPS
+// Fetches Data (On "Build" Time) & Sends The Result As "Props" To The Page Component (Below)
+export async function getStaticProps({ params }) {
+	// We need the URL parameter or id to know which post was requested (I.e. written-in-the-URL/searched) to fetch the JSON file with that parameter or id
+	// Getting that info from the "params" argument in the function, which comes from "getStaticPaths"
+	const requestBlogPost = await fetch(`http://localhost:3000/${params.blogPost}.json`)// Fetching the JSON for an individual post
+
+	// Converting to JSON
+	const dataPropsJSON = await requestBlogPost.json()
+
+	// Returning an object that has a "props" property, where each "prop" can then be accessed by the component
+	return {
+		props: { post: dataPropsJSON },
+	}
+};
+
+
+
 // BlogPost (Page) (Dynamic) Component
-export default function BlogPostPage({ post }) {//Destructuring "post" prop
+export default function BlogPostPage({ post }) {//Destructuring & passing "post" prop from "getStaticProps" above
 	const router = useRouter()
 
 	// Gets whatever is written in the URL parameter after "/projects/" // This will hold the concrete value in the URL for the dynamic segment of the page visited

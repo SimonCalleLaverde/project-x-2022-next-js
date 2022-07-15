@@ -1,12 +1,24 @@
-// - - - - - - - O F F I C I A L   N E X T   E X A M P L E   [id].js - - - - - - - //
+// - - - - - - - O F F I C I A L   N E X T   J S   E X A M P L E   [id].js - - - - - - - //
 
 // Imports
-import { getAllPostIds, getPostData } from "../../lib/posts";
+import { getAllPostIds, getPostData } from "../../lib/posts";//This was useful for ".md" files in that example, I'll use graphCMS
 import Head from "next/head";
 
+// IMPLEMENTING "STATIC SITE GENERATION" BELOW (WITH "getStaticPaths" & "getStaticProps")
+
+// GET STATIC PATHS
+export async function getStaticPaths() {
+  const paths = getAllPostIds()//This function makes the fetch, .map(), etc
+
+  return {
+    paths,//This is same than "paths: paths"
+    fallback: false
+  }
+};
 
 
-// Using "getStaticProps" Function To Fetch
+
+// GET STATIC PROPS
 export async function getStaticProps({ params }) {
   const postData = await getPostData(params.id)//Adding the "await" keyword (to use 'remark' library)
 
@@ -19,23 +31,8 @@ export async function getStaticProps({ params }) {
 
 
 
-// "getStaticPaths" returns an array of possible values for "id"
-// Importing & using the "getAllPostIds" function inside getStaticPaths
-export async function getStaticPaths() {
-  // Returns a list of 'possible values' for id
-  const paths = getAllPostIds()
-
-  return {
-    paths,
-    fallback: false
-  }
-};
-
-
-
-// A React component to render the page
-// Using 'remark' library: Rendering "contentHtml" (the 'content' part of the Blog Post) using "dangerouslySetInnerHTML"
-export default function Post({ postData }) {
+// BlogPost (Page) (Dynamic) Component
+export default function BlogPost({ postData }) {
   return (
     <>
       <Head>
@@ -49,6 +46,7 @@ export default function Post({ postData }) {
 
         {/*<Date dateString={ postData.date }/>*/}
 
+        {/* Using 'remark' library: Rendering "contentHtml" (the 'content' part of the Blog Post) using "dangerouslySetInnerHTML" */}
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }}/>
       </article>
     </>

@@ -4,9 +4,9 @@
 import { GraphQLClient, gql } from "graphql-request";
 import Head from "next/head";
 
+// THIS PART BELOW IS BEING USED FOR FETCHING USING GRAPHCMS (THE REST IS THE SAME IN THE OTHER TWO EXAMPLES)
 
-
-// API Access Endpoint Token (GraphCMS > Project > Project Settings > API Access > Content API)
+// API Access Endpoint Token (Found at: "GraphCMS > Project > Project Settings > API Access > Content API")
 const accessEndpoint = "https://api-us-east-1.graphcms.com/v2/cl495aqwz0vh801w8cxos12a7/master";
 const graphCMSRequestAPI = new GraphQLClient(accessEndpoint);
 
@@ -46,12 +46,25 @@ const SLUGLIST = gql`
   }
 `;
 
+// IMPLEMENTING "STATIC SITE GENERATION" BELOW (WITH "getStaticPaths" & "getStaticProps")
+
+// GET STATIC PATHS
+export async function getStaticPaths() {
+  const posts = await graphCMSRequestAPI.request(SLUGLIST)
+
+  const paths = posts.map(post => { params: { slug: post.slug } })//id: post
+
+  return {
+    paths,//This is same than "paths: paths"
+    fallback: false
+  }
+};
 
 
-// Using "getStaticProps" Function To Fetch
+
+// GET STATIC PROPS
 export async function getStaticProps({ params }) {
-  const slug = params.slug;
-  const data = await graphCMSRequestAPI.request(graphCMSQuery, {slug});
+  const data = await graphCMSRequestAPI.request(graphCMSQuery, {params.slug});
   const post = data.post;
 
   return {
@@ -64,23 +77,7 @@ export async function getStaticProps({ params }) {
 
 
 
-// Using "getStaticPaths" Function // Request In The Backend And Will Find The Params That Are Available & Pass Them To "getStaticProps" Below
-// Cause Is Generated On The Server & We Don't Have Access To The URLs, We Have To Define The Paths Here In The Backend
-export async function getStaticPaths() {
-  // Defining/Telling Next.js Which Are The Paths That Need To Be Generated (Example)
-  // paths: ["macdonalds", "jamstack-with-next"]
-
-  const {posts} = await graphCMSRequestAPI.request(SLUGLIST);
-
-  return {
-    paths: posts.map(post => ({ params: { slug: post.slug } })),
-    fallback: false,
-  }
-};
-
-
-
-// BlogPost Page Component // Passing "post" From "getStaticProps" Above
+// BlogPost (Page) (Dynamic) Component
 export default function BlogPost({ post }) {
   return (
     <main>
