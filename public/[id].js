@@ -29,6 +29,8 @@ export async function getStaticProps({ params }) {
 
 
 
+
+
 // BlogPost (Page) (Dynamic) Component
 export default function BlogPost({ postData }) {
   return (
