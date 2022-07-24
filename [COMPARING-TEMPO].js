@@ -1,4 +1,4 @@
-// [ NEXT IN 100 SECONDS ]
+// [ NEXT IN 100 SECONDS "[blogPost].js" ]
 // BlogPost (Page) (Dynamic) Component
 export default function BlogPostPage({ postData }) {//Destructuring & passing "postData" prop from "getStaticProps" above
 	const router = useRouter()
@@ -26,7 +26,7 @@ export default function BlogPostPage({ postData }) {//Destructuring & passing "p
 
 
 
-// [ OFFICIAL NEXT ]
+// [ OFFICIAL NEXT "[id].js" ]
 // BlogPost (Page) (Dynamic) Component
 export default function BlogPostPage({ postData }) {
   return (
@@ -51,7 +51,7 @@ export default function BlogPostPage({ postData }) {
 
 
 
-// [ GRAPHCMS DEV ED ]
+// [ GRAPHCMS DEV ED "[slug].js" ]
 // BlogPost (Page) (Dynamic) Component
 export default function BlogPostPage({ postData }) {
   return (
