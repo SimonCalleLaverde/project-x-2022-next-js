@@ -54,8 +54,7 @@ export default function BlogPostPage({ postData }) {//Destructuring & passing "p
 	const router = useRouter()
 
 	// Gets whatever is written in the URL parameter after "/projects/" // This will hold the concrete value in the URL for the dynamic segment of the page visited
-	//const blogPost = router.query.blogPost
-	const { blogPost } = router.query
+	const { blogPost } = router.query//const blogPost = router.query.blogPost
 
 	return (
 		<>
