@@ -73,31 +73,38 @@ export async function getStaticProps({ params }) {
   }
 };
 
-
-
-
-
 // BlogPost (Page) (Dynamic) Component
-export default function BlogPost({ postData }) {
+export default function BlogPostPage({ postData }) {
   return (
-    <main>
-      <img src={ postData.coverPhoto.url } alt=""/>
+    <>
+      <Head>
+        <title>{ postData.title }</title>
+        {/* To add meta-tags, etc. <Head/> builds lots of crap already like "<meta charset='utf-8'>", "<meta name='viewport' content='width=device-width'>", some "<script></script>", "<noscript></noscript>", "<style></style>", and so. So to be careful for not repeated stuff */}
+      </Head>
 
-      <div>
-        <div>
-          <img src={ postData.author.avatar.url } alt=""/>
+      <main>
+        <section>
+
+
+
+          <img src={ postData.coverPhoto.url } alt=""/>
 
           <div>
-            <h6>By { postData.author.name }</h6>
-            <small>{ postData.datePublished }</small>
+            <img src={ postData.author.avatar.url } alt=""/>
+
+            <div>
+              <h6>By { postData.author.name }</h6>
+              <small>{ postData.datePublished }</small>
+            </div>
           </div>
-        </div>
 
-        <h2>{ postData.title }</h2>
-      </div>
+          <div dangerouslySetInnerHTML={{ __html: postData.content.html }}>
+          </div>
 
-      <div dangerouslySetInnerHTML={{ __html: postData.content.html }}>
-      </div>
-    </main>
+
+
+        </section>
+      </main>
+    </>
   )
 };

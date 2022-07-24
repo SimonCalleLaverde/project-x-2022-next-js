@@ -3,23 +3,21 @@
 export default function BlogPostPage({ postData }) {
   return (
     <>
+      <Head>
+        <title>{ postData.title }</title>
+        {/* To add meta-tags, etc. <Head/> builds lots of crap already like "<meta charset='utf-8'>", "<meta name='viewport' content='width=device-width'>", some "<script></script>", "<noscript></noscript>", "<style></style>", and so. So to be careful for not repeated stuff */}
+      </Head>
+
       <main>
-        <Head>
-          <title>{ postData.title }</title>
-          {/* To add meta-tags, etc. <Head/> builds lots of crap already like "<meta charset='utf-8'>", "<meta name='viewport' content='width=device-width'>", some "<script></script>", "<noscript></noscript>", "<style></style>", and so. So to be careful for not repeated stuff */}
-        </Head>
-
-        <article>
+        <section>
 
 
-
-    			<h1>[Blog Post] (Page) Component</h1>
 
     			<img src={ postData.image } alt="" width="300"/>{/*300px*/}
 
 
 
-        </article>
+        </section>
       </main>
     </>
   )
@@ -32,28 +30,26 @@ export default function BlogPostPage({ postData }) {
 export default function BlogPostPage({ postData }) {
   return (
     <>
+      <Head>
+        <title>{ postData.title }</title>
+        {/* To add meta-tags, etc. <Head/> builds lots of crap already like "<meta charset='utf-8'>", "<meta name='viewport' content='width=device-width'>", some "<script></script>", "<noscript></noscript>", "<style></style>", and so. So to be careful for not repeated stuff */}
+      </Head>
+
       <main>
-        <Head>
-          <title>{ postData.title }</title>
-          {/* To add meta-tags, etc. <Head/> builds lots of crap already like "<meta charset='utf-8'>", "<meta name='viewport' content='width=device-width'>", some "<script></script>", "<noscript></noscript>", "<style></style>", and so. So to be careful for not repeated stuff */}
-        </Head>
-
-        <article>
+        <section>
 
 
-
-          <h1>{ postData.title }</h1>
 
           {/*{ postData.id }*/}
 
-          {/*<Date dateString={ postData.date }/>*/}
+          {/*{ postData.date }*/}
 
           {/* Using 'remark' library: Rendering "contentHtml" (the 'content' part of the Blog Post) using "dangerouslySetInnerHTML" */}
           <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }}/>
 
 
 
-        </article>
+        </section>
       </main>
     </>
   )
@@ -66,29 +62,25 @@ export default function BlogPostPage({ postData }) {
 export default function BlogPostPage({ postData }) {
   return (
     <>
-      <main>
-        <Head>
-          <title>{ postData.title }</title>
-          {/* To add meta-tags, etc. <Head/> builds lots of crap already like "<meta charset='utf-8'>", "<meta name='viewport' content='width=device-width'>", some "<script></script>", "<noscript></noscript>", "<style></style>", and so. So to be careful for not repeated stuff */}
-        </Head>
+      <Head>
+        <title>{ postData.title }</title>
+        {/* To add meta-tags, etc. <Head/> builds lots of crap already like "<meta charset='utf-8'>", "<meta name='viewport' content='width=device-width'>", some "<script></script>", "<noscript></noscript>", "<style></style>", and so. So to be careful for not repeated stuff */}
+      </Head>
 
-        <article>
+      <main>
+        <section>
 
 
 
           <img src={ postData.coverPhoto.url } alt=""/>
 
           <div>
+            <img src={ postData.author.avatar.url } alt=""/>
+
             <div>
-              <img src={ postData.author.avatar.url } alt=""/>
-
-              <div>
-                <h6>By { postData.author.name }</h6>
-                <small>{ postData.datePublished }</small>
-              </div>
+              <h6>By { postData.author.name }</h6>
+              <small>{ postData.datePublished }</small>
             </div>
-
-            <h2>{ postData.title }</h2>
           </div>
 
           <div dangerouslySetInnerHTML={{ __html: postData.content.html }}>
@@ -96,7 +88,7 @@ export default function BlogPostPage({ postData }) {
 
 
 
-        </article>
+        </section>
       </main>
     </>
   )

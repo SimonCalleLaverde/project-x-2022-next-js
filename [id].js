@@ -27,28 +27,31 @@ export async function getStaticProps({ params }) {
   }
 };
 
-
-
-
-
 // BlogPost (Page) (Dynamic) Component
-export default function BlogPost({ postData }) {
+export default function BlogPostPage({ postData }) {
   return (
     <>
       <Head>
         <title>{ postData.title }</title>
+        {/* To add meta-tags, etc. <Head/> builds lots of crap already like "<meta charset='utf-8'>", "<meta name='viewport' content='width=device-width'>", some "<script></script>", "<noscript></noscript>", "<style></style>", and so. So to be careful for not repeated stuff */}
       </Head>
 
-      <article>
-        <h1>{ postData.title }</h1>
+      <main>
+        <section>
 
-        {/*{ postData.id }*/}
 
-        {/*<Date dateString={ postData.date }/>*/}
 
-        {/* Using 'remark' library: Rendering "contentHtml" (the 'content' part of the Blog Post) using "dangerouslySetInnerHTML" */}
-        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }}/>
-      </article>
+          {/*{ postData.id }*/}
+
+          {/*{ postData.date }*/}
+
+          {/* Using 'remark' library: Rendering "contentHtml" (the 'content' part of the Blog Post) using "dangerouslySetInnerHTML" */}
+          <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }}/>
+
+
+
+        </section>
+      </main>
     </>
   )
 };
