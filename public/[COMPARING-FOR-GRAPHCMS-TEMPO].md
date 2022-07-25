@@ -7,11 +7,11 @@ thumbnail_image: /uploads/site-image-bogota-bulldogs.jpg # This is the "Thumbnai
 header_image: /uploads/site-image-bogota-bulldogs.jpg # This is the "Header Image" shown in the Project page itself.
 platforms: [Jekyll, Bootstrap 4, Forestry CMS] # This are the platforms used to build the project, like "frameworks", "css-frameworks", "CMS's", "API's". (It was an array which I looped with liquid-code (now JS) to bring in the UI as so, e.g. "Jekyll · Bootstrap 4 · Forestry CMS").
 year: 2019 # The project's launch year.
-roles: Frontend development & CMS # The roles I had in the project.
+roles: Frontend development & CMS # The roles I had in the project. It may have multiple values.
 web:
   launch_url: https://bogota-bulldogs.netlify.com/ # Web Launch URL # This is the full URL for the website's live version.
   images:
-    - /uploads/site-web-bogota-bulldogs.png # This are the live website screenshots & images (it may have multiple values and was a markdown list, which I could loop over using liquid-code (now JS) to print in the UI. E.g. "- /uploads/site-web-bogota-bulldogs.png").
+    - /uploads/site-web-bogota-bulldogs.png # This are the live website screenshots & images. It may have multiple values. (It was a markdown list, which I could loop over using liquid-code (now JS) to print in the UI, e.g. "- /uploads/site-web-bogota-bulldogs.png").
 type: Sports Campaign Website # This is the website's "type", e.g: "Sports Campaign Website".
 category: Development for Code Nation Australia # This is the website's "Category", e.g: "Development for Code Nation Australia".
 tags: [Campaign Platform, Theme Dark] # This are tags for the collection. It may have multiple values. (It was an array in the Jekyll's site).
