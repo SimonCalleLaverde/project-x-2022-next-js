@@ -9,11 +9,11 @@ export default function ProjectsPage() {
 			
 			<strong>Cars List Temporary 🚗 🚙</strong>
 
-			{/* List will be generated dynamically by maping an array of data (JSON files temporary, later GraphCMS) into JSX elements */}
 			<ul>
 
 
 
+				{/* List will be generated dynamically by maping an array of data (JSON files temporary, later GraphCMS) into JSX elements */}
 				<li>
 					<Link href="/projects/tesla">
 						Tesla Car
