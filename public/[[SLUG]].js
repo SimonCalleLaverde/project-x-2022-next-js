@@ -1,14 +1,17 @@
 // - - - - - - - G R A P H   C M S   D E V   E D   E X A M P L E   [slug].js - - - - - - - //
 
 // Imports
-import { GraphQLClient, gql } from "graphql-request";
 import Head from "next/head";
+//import styles from "../../styles/Slug.module.css";
+import { GraphQLClient, gql } from "graphql-request";
 
-// THIS PART BELOW IS BEING USED FOR FETCHING USING GRAPHCMS (THE REST IS THE SAME IN THE OTHER TWO EXAMPLES)
+// THIS PART BELOW IS BEING USED TO FETCH USING GRAPHCMS (THE REST IS THE SAME IN THE OTHER TWO NON-GRAPHCMS EXAMPLES)
 
 // API Access Endpoint Token (Found at: "GraphCMS > Project > Project Settings > API Access > Content API")
 const accessEndpoint = "https://api-us-east-1.graphcms.com/v2/cl495aqwz0vh801w8cxos12a7/master";
 const graphCMSRequestAPI = new GraphQLClient(accessEndpoint);
+
+
 
 // Querying With GraphQL (The Specific Post That The Slug Matches)
 const graphCMSQuery = gql`
@@ -45,6 +48,8 @@ const SLUGLIST = gql`
     }
   }
 `;
+
+
 
 // IMPLEMENTING "STATIC SITE GENERATION" BELOW (WITH "getStaticPaths" & "getStaticProps")
 

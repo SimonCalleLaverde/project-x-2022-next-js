@@ -1,0 +1,37 @@
+// FROM "API PLAYGROUND"
+
+query {
+
+  projects {
+    title
+    slug
+    nameForThumbnail
+    client
+    thumbnailImage {
+      url
+    }
+    headerImage {
+      url
+    }
+    platforms
+    year
+    roles
+    webLaunchUrl
+    webImages {
+      url
+    }
+    type
+    category
+    tags
+    content {
+      text
+    }
+  }
+
+}
+
+
+
+// I KNOW I KNOW, BUT I WANTED TO TEMPORARY PASTE IT HERE
+
+https://api-us-east-1.hygraph.com/v2/cl5ketcvx2wnm01ta90nhcdmy/master

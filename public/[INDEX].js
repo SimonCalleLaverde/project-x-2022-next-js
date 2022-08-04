@@ -1,18 +1,24 @@
 // THIS IS THE "NextJS Blog GraphCMS" EXAMPLE RENDERING THE POSTS ON THE HOMEPAGE (AT "pages/index.js") TO REVISE
 
+// Imports
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
+//import styles from "../styles/Home.module.css";
 import { GraphQLClient, gql } from "graphql-request";
 import BlogCard from "../components/BlogCard";
 
-// API Access Endpoint Token (GraphCMS > Project > Project Settings > API Access > Content API)
+// THIS PART BELOW IS BEING USED TO FETCH USING GRAPHCMS (THE REST IS THE SAME IN THE OTHER TWO NON-GRAPHCMS EXAMPLES)
+
+// API Access Endpoint Token (Found at: "GraphCMS > Project > Project Settings > API Access > Content API")
 const accessEndpoint = "https://api-us-east-1.graphcms.com/v2/cl495aqwz0vh801w8cxos12a7/master";
 const graphCMSRequestAPI = new GraphQLClient(accessEndpoint);
+
+
 
 // Querying With GraphQL
 const graphCMSQuery = gql`
   {
     posts {
+
       id
       coverPhoto {
         url
@@ -29,24 +35,31 @@ const graphCMSQuery = gql`
       }
       datePublished
       slug
+
     }
   }
 `;
 
+
+
+// GET STATIC PROPS
 // Making The API Call/Request (Using "getStaticProps" Function)
 export async function getStaticProps() {
-  const { posts } = await graphCMSRequestAPI.request(graphCMSQuery);
+  const { allPosts } = await graphCMSRequestAPI.request(graphCMSQuery);
 
   return {
     props: {
-      posts,
-    },
-    revalidate: 10,
+      allPosts,
+    }//,
+    //revalidate: 10,
   }
 };
 
-// Home Page Component // Passing "posts" As Props // Passing Down Data In "BlogCard"
-export default function Home({ posts }) {
+
+
+// Home (Page) Component
+// Passing "allPosts" As Props // Passing Down Data In "BlogCard"
+export default function HomePage({ allPosts }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -55,9 +68,9 @@ export default function Home({ posts }) {
         <link rel="icon" href="/favicon.ico"/>
       </Head>
 
-      {/* Mapping through "posts" and displaying each "post" */}
+      {/* Mapping through "allPosts" and displaying each "post", in a "BlogCard" component */}
       <main className={styles.main}>
-        {posts.map(post => (
+        {allPosts.map(post => (
           <BlogCard
             key={post.id}
             coverPhoto={post.coverPhoto}
