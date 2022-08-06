@@ -43,9 +43,6 @@ const graphCMSQuery = gql`
 export async function getStaticProps() {
   const { posts } = await graphCMSRequestAPI.request(graphCMSQuery);
 
-  // Could have changed to the following here instead. But I think removing destructuring in the object below looks cleaner:
-  //const allPosts = await graphCMSRequestAPI.request(graphCMSQuery.posts);
-
   return {
     props: {
       allPosts: posts//,

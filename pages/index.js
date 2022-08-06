@@ -9,30 +9,37 @@ import { GraphQLClient, gql } from "graphql-request";
 // THIS PART BELOW IS BEING USED TO FETCH USING GRAPHCMS (THE REST IS THE SAME IN THE OTHER TWO NON-GRAPHCMS EXAMPLES)
 
 // API Access Endpoint Token (Found at: "GraphCMS > Project > Project Settings > API Access > Content API")
-const accessEndpoint = "https://api-us-east-1.graphcms.com/v2/cl495aqwz0vh801w8cxos12a7/master";
+const accessEndpoint = "https://api-us-east-1.hygraph.com/v2/cl5ketcvx2wnm01ta90nhcdmy/master";
 const graphCMSRequestAPI = new GraphQLClient(accessEndpoint);
 
 // Querying With GraphQL
 const graphCMSQuery = gql`
   {
-    posts {
+    projects {
 
-      id
-      coverPhoto {
+      title
+      slug
+      nameForThumbnail
+      client
+      thumbnailImage {
         url
       }
-      title
+      headerImage {
+        url
+      }
+      platforms
+      year
+      roles
+      webLaunchUrl
+      webImages {
+        url
+      }
+      type
+      category
+      tags
       content {
-        html
+        text
       }
-      author {
-        name
-        avatar {
-          url
-        }
-      }
-      datePublished
-      slug
 
     }
   }
@@ -41,22 +48,19 @@ const graphCMSQuery = gql`
 // GET STATIC PROPS
 // Making The API Call/Request (Using "getStaticProps" Function)
 export async function getStaticProps() {
-  const { posts } = await graphCMSRequestAPI.request(graphCMSQuery);
-
-  // Could have changed to the following here instead. But I think removing destructuring in the object below looks cleaner:
-  //const allPosts = await graphCMSRequestAPI.request(graphCMSQuery.posts);
+  const { projects } = await graphCMSRequestAPI.request(graphCMSQuery);
 
   return {
     props: {
-      allPosts: posts//,
+      allProjects: projects//,
     }//,
     //revalidate: 10,
   }
 };
 
 // Home (Page) Component
-// Passing "allPosts" As Props // Passing Down Data In "BlogCard"
-export default function HomePage({ allPosts }) {
+// Passing "allProjects" As Props // Passing Down Data In "BlogCard"
+export default function HomePage({ allProjects }) {
   return (
     <div>
       <Head>
@@ -65,9 +69,9 @@ export default function HomePage({ allPosts }) {
         <link rel="icon" href="/favicon.ico"/>
       </Head>
 
-      {/* Mapping through "allPosts" and displaying each "post", in a "BlogCard" component */}
+      {/* Mapping through "allProjects" and displaying each "post", in a "BlogCard" component */}
       <main>
-        {allPosts.map(post => (
+        {allProjects.map(post => (
           // <BlogCard
           //   key={post.id}
           //   coverPhoto={post.coverPhoto}
