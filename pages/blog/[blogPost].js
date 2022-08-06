@@ -4,6 +4,13 @@
 // Imports
 import Head from "next/head";
 //import styles from "../../styles/Slug.module.css";
+import { GraphQLClient, gql } from "graphql-request";
+
+// THIS PART BELOW IS BEING USED TO FETCH USING GRAPHCMS (THE REST IS THE SAME IN THE OTHER TWO NON-GRAPHCMS EXAMPLES)
+
+// API Access Endpoint Token (Found at: "GraphCMS > Project > Project Settings > API Access > Content API")
+const accessEndpoint = "https://api-us-east-1.hygraph.com/v2/cl5ketcvx2wnm01ta90nhcdmy/master";
+const graphCMSRequestAPI = new GraphQLClient(accessEndpoint);
 
 
 

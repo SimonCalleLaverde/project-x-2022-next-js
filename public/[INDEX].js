@@ -12,8 +12,6 @@ import BlogCard from "../components/BlogCard";
 const accessEndpoint = "https://api-us-east-1.graphcms.com/v2/cl495aqwz0vh801w8cxos12a7/master";
 const graphCMSRequestAPI = new GraphQLClient(accessEndpoint);
 
-
-
 // Querying With GraphQL
 const graphCMSQuery = gql`
   {
@@ -40,22 +38,21 @@ const graphCMSQuery = gql`
   }
 `;
 
-
-
 // GET STATIC PROPS
 // Making The API Call/Request (Using "getStaticProps" Function)
 export async function getStaticProps() {
-  const { allPosts } = await graphCMSRequestAPI.request(graphCMSQuery);
+  const { posts } = await graphCMSRequestAPI.request(graphCMSQuery);
+
+  // Could have changed to the following here instead. But I think removing destructuring in the object below looks cleaner:
+  //const allPosts = await graphCMSRequestAPI.request(graphCMSQuery.posts);
 
   return {
     props: {
-      allPosts,
+      allPosts: posts//,
     }//,
     //revalidate: 10,
   }
 };
-
-
 
 // Home (Page) Component
 // Passing "allPosts" As Props // Passing Down Data In "BlogCard"

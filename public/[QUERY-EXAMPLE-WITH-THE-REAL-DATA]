@@ -1,5 +1,3 @@
-// FROM "API PLAYGROUND"
-
 query {
 
   projects {
@@ -29,9 +27,3 @@ query {
   }
 
 }
-
-
-
-// I KNOW I KNOW, BUT I WANTED TO TEMPORARY PASTE IT HERE
-
-https://api-us-east-1.hygraph.com/v2/cl5ketcvx2wnm01ta90nhcdmy/master

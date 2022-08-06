@@ -11,8 +11,6 @@ import { GraphQLClient, gql } from "graphql-request";
 const accessEndpoint = "https://api-us-east-1.graphcms.com/v2/cl495aqwz0vh801w8cxos12a7/master";
 const graphCMSRequestAPI = new GraphQLClient(accessEndpoint);
 
-
-
 // Querying With GraphQL (The Specific Post That The Slug Matches)
 const graphCMSQuery = gql`
   query Post($slug: String!) {
@@ -48,8 +46,6 @@ const SLUGLIST = gql`
     }
   }
 `;
-
-
 
 // IMPLEMENTING "STATIC SITE GENERATION" BELOW (WITH "getStaticPaths" & "getStaticProps")
 

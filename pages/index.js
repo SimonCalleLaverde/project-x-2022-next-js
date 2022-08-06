@@ -1,71 +1,85 @@
+// THIS IS THE "NextJS Blog GraphCMS" EXAMPLE RENDERING THE POSTS ON THE HOMEPAGE (AT "pages/index.js") TO REVISE
+
 // Imports
 import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.scss";
+//import styles from "../styles/Home.module.css";
+import { GraphQLClient, gql } from "graphql-request";
+//import BlogCard from "../components/BlogCard";
+
+// THIS PART BELOW IS BEING USED TO FETCH USING GRAPHCMS (THE REST IS THE SAME IN THE OTHER TWO NON-GRAPHCMS EXAMPLES)
+
+// API Access Endpoint Token (Found at: "GraphCMS > Project > Project Settings > API Access > Content API")
+const accessEndpoint = "https://api-us-east-1.graphcms.com/v2/cl495aqwz0vh801w8cxos12a7/master";
+const graphCMSRequestAPI = new GraphQLClient(accessEndpoint);
+
+// Querying With GraphQL
+const graphCMSQuery = gql`
+  {
+    posts {
+
+      id
+      coverPhoto {
+        url
+      }
+      title
+      content {
+        html
+      }
+      author {
+        name
+        avatar {
+          url
+        }
+      }
+      datePublished
+      slug
+
+    }
+  }
+`;
+
+// GET STATIC PROPS
+// Making The API Call/Request (Using "getStaticProps" Function)
+export async function getStaticProps() {
+  const { posts } = await graphCMSRequestAPI.request(graphCMSQuery);
+
+  // Could have changed to the following here instead. But I think removing destructuring in the object below looks cleaner:
+  //const allPosts = await graphCMSRequestAPI.request(graphCMSQuery.posts);
+
+  return {
+    props: {
+      allPosts: posts//,
+    }//,
+    //revalidate: 10,
+  }
+};
 
 // Home (Page) Component
-export default function HomePage() {
+// Passing "allPosts" As Props // Passing Down Data In "BlogCard"
+export default function HomePage({ allPosts }) {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
-        <title>Portfolio V3 2022 NextJS</title>
-        <meta name="description" content="I create modern and experimental websites designed to create conversion and persuade using copywriting, good design, and strategy for people to take action. I'm a web developer and web designer with 6 years of experience in web development, and 5 years of studies in marketing and advertising. I build high quality hand-crafted professional websites that stand out! I have a background that includes campaigning, branding, linguistics, visual semiotics, and psichology to create sales. I use the latest technologies in 2022 to create awesome fastspeed and engaging websites."/>
+        <title>NextJS Blog GraphCMS</title>
+        <meta name="description" content="NextJS Blog with GraphCMS example."/>
         <link rel="icon" href="/favicon.ico"/>
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
+      {/* Mapping through "allPosts" and displaying each "post", in a "BlogCard" component */}
+      <main>
+        {allPosts.map(post => (
+          // <BlogCard
+          //   key={post.id}
+          //   coverPhoto={post.coverPhoto}
+          //   title={post.title}
+          //   content={post.content}
+          //   author={post.author}
+          //   datePublished={post.datePublished}
+          //   slug={post.slug}
+          // />
+          <h1>Hey there, fixed!</h1>
+        ))}
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            {/*<Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16}/>*/}
-          </span>
-        </a>
-      </footer>
     </div>
   )
 };
