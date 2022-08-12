@@ -1,4 +1,4 @@
-// - - - - - - - N E X T J S   I N   1 0 0   S E C O N D S   E X A M P L E   [blogPost].js - - - - - - - //
+// - - - - - - - N E X T   J S   I N   1 0 0   S E C O N D S   F I R E S H I P   (F I R E S H I P . I O   E X A M P L E)   "pages/cars/[id].js" - - - - - - - //
 
 // Dynamic Route Result: "/blog/[blogPost]" (E.g: "/blog/blog-post-1", "/blog/blog-post-2", "/blog/blog-post-3")
 

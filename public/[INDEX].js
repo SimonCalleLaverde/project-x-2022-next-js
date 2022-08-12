@@ -1,8 +1,10 @@
-// THIS IS THE "NextJS Blog GraphCMS" EXAMPLE RENDERING THE POSTS ON THE HOMEPAGE (AT "pages/index.js") TO REVISE
+// - - - - - - - N E X T   J S   B L O G   G R A P H C M S   (D E V   E D   E X A M P L E)   "pages/index.js" - - - - - - - //
+
+// THIS IS MY "NextJS Blog GraphCMS" EXAMPLE, RENDERING THE POSTS ON THE HOMEPAGE (AT "pages/index.js")
 
 // Imports
 import Head from "next/head";
-//import styles from "../styles/Home.module.css";
+import styles from "../styles/Home.module.css";
 import { GraphQLClient, gql } from "graphql-request";
 import BlogCard from "../components/BlogCard";
 

@@ -1,4 +1,4 @@
-// - - - - - - - G R A P H   C M S   D E V   E D   E X A M P L E   [slug].js - - - - - - - //
+// - - - - - - - N E X T   J S   B L O G   G R A P H C M S   (D E V   E D   E X A M P L E)   "pages/posts/[slug].js" - - - - - - - //
 
 // Imports
 import Head from "next/head";

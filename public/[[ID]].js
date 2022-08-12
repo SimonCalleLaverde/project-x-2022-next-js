@@ -1,4 +1,4 @@
-// - - - - - - - O F F I C I A L   N E X T   J S   E X A M P L E   [id].js - - - - - - - //
+// - - - - - - - N E X T   J S   B L O G   (O F F I C I A L   N E X T J S   E X A M P L E)   "pages/posts/[id].js" - - - - - - - //
 
 // Imports
 import { getAllPostIds, getPostData } from "../../lib/posts";//This was useful for ".md" files in that example, I'll use graphCMS
