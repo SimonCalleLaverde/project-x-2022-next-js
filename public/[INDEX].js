@@ -8,7 +8,7 @@ import styles from "../styles/Home.module.css";
 import { GraphQLClient, gql } from "graphql-request";
 import BlogCard from "../components/BlogCard";
 
-// THIS PART BELOW IS BEING USED TO FETCH USING GRAPHCMS (THE REST IS THE SAME IN THE OTHER TWO NON-GRAPHCMS EXAMPLES)
+// THIS PART BELOW IS BEING USED TO FETCH USING GRAPHCMS
 
 // API Access Endpoint Token (Found at: "GraphCMS > Project > Project Settings > API Access > Content API")
 const accessEndpoint = "https://api-us-east-1.graphcms.com/v2/cl495aqwz0vh801w8cxos12a7/master";
@@ -21,6 +21,7 @@ const graphCMSQuery = gql`
 
       id
       coverPhoto {
+        id
         url
       }
       title

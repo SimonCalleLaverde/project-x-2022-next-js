@@ -4,9 +4,9 @@
 import Head from "next/head";
 //import styles from "../styles/Home.module.css";
 import { GraphQLClient, gql } from "graphql-request";
-//import BlogCard from "../components/BlogCard";
+import ProjectCard from "../components/ProjectCard";
 
-// THIS PART BELOW IS BEING USED TO FETCH USING GRAPHCMS (THE REST IS THE SAME IN THE OTHER TWO NON-GRAPHCMS EXAMPLES)
+// THIS PART BELOW IS BEING USED TO FETCH USING GRAPHCMS
 
 // API Access Endpoint Token (Found at: "GraphCMS > Project > Project Settings > API Access > Content API")
 const accessEndpoint = "https://api-us-east-1.hygraph.com/v2/cl5ketcvx2wnm01ta90nhcdmy/master";
@@ -17,6 +17,7 @@ const graphCMSQuery = gql`
   {
     projects {
 
+      id
       title
       slug
       nameForThumbnail
@@ -46,8 +47,8 @@ const graphCMSQuery = gql`
 `;
 
 // GET STATIC PROPS
-// Making The API Call/Request (Using "getStaticProps" Function)
 export async function getStaticProps() {
+  // Making The API Call/Request
   const { projects } = await graphCMSRequestAPI.request(graphCMSQuery);
 
   return {
@@ -59,31 +60,40 @@ export async function getStaticProps() {
 };
 
 // Home (Page) Component
-// Passing "allProjects" As Props // Passing Down Data In "BlogCard"
+// Passing "allProjects" As Props
+// Passing Down Data Into "ProjectCard"
 export default function HomePage({ allProjects }) {
   return (
-    <div>
+    <>
       <Head>
-        <title>NextJS Blog GraphCMS</title>
-        <meta name="description" content="NextJS Blog with GraphCMS example."/>
+        <title>Portfolio V3 2022 NextJS</title>
+        <meta name="description" content="Portfolio V3 2022 NextJS using GraphCMS."/>
         <link rel="icon" href="/favicon.ico"/>
       </Head>
 
-      {/* Mapping through "allProjects" and displaying each "post", in a "BlogCard" component */}
       <main>
-        {allProjects.map(post => (
-          // <BlogCard
-          //   key={post.id}
-          //   coverPhoto={post.coverPhoto}
-          //   title={post.title}
-          //   content={post.content}
-          //   author={post.author}
-          //   datePublished={post.datePublished}
-          //   slug={post.slug}
-          // />
-          <h1>Hey there, fixed!</h1>
+        {/* Mapping through "allProjects" and displaying each "project", in a "ProjectCard" component */}
+        {allProjects.map(project => (
+          <ProjectCard
+            key={project.id}
+            title={project.title}
+            slug={project.slug}
+            nameForThumbnail={project.nameForThumbnail}
+            client={project.client}
+            thumbnailImage={project.thumbnailImage}
+            headerImage={project.headerImage}
+            platforms={project.platforms}
+            year={project.year}
+            roles={project.roles}
+            webLaunchUrl={project.webLaunchUrl}
+            webImages={project.webImages}
+            type={project.type}
+            category={project.category}
+            tags={project.tags}
+            content={project.content}
+          />
         ))}
       </main>
-    </div>
+    </>
   )
 };
