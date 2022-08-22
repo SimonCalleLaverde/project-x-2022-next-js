@@ -8,7 +8,8 @@ export default function ProjectCard({ title, slug, nameForThumbnail, client, thu
 	return (
 		<article>
 			<Link href={`/projects/${slug}`}>
-				<Image src={thumbnailImage.url} alt={`${title} Project's Thumbnail Image`} layout="fill"/>{/* Must use "width" & "height" properties or "layout='fill'" property */}
+				{/*<Image src={thumbnailImage.url} alt={`${title} Project's Thumbnail Image`} layout="fill"/>*/}{/* Must use "width" & "height" properties or "layout='fill'" property */}
+				<img src={thumbnailImage.url} alt={`${title} Project's Thumbnail Image`}/>
 			</Link>
 
 			<div className="project-caption">
