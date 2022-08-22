@@ -1,4 +1,5 @@
 // Imports
+import Head from "next/head";
 import Link from "next/link";
 
 // Projects (Page) Component

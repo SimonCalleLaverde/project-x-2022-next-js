@@ -1,0 +1,80 @@
+// REVISING // THIS CAME FROM MY "next-js-blog-graphcms" // WON'T USE ".module" FILES AT THE END
+
+.article {
+  margin-bottom:5rem;//Temporary
+  img {
+    max-width:700px;//Temporary
+  }
+
+
+
+  // If "Image" component is used // As it is in github's live-code example, and this one
+  .imgWrapper {
+    position: relative;//Important for "layout='fill'" which uses a "position:absolute" "<span><span/>" inside
+    width: 100%;
+    height:75vh;//25vh//20vh
+  }
+  // If "Image" component is not used // As finally used in video tutorial example
+  // .imgWrapper img {
+  //   height: 25vh;
+  //   width: 100%;
+  // }
+
+
+
+
+  img {
+    object-fit: cover;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    &:hover {
+      opacity:0.7;/*0.3*//*0.8*/
+    }
+  }
+  h1 {
+  }
+  h4 {
+  }
+
+
+
+
+}
+
+
+
+
+// TO REVISE ALL THIS [Start]
+.caption {
+  padding: 1rem 3rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0.5rem 0rem;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+}
+.author img {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+// TO REVISE ALL THIS [End]
+
+
+
+
+@media screen and (max-width: 768px) {
+  .article {
+    margin:0rem 2rem 5rem;
+  }
+}

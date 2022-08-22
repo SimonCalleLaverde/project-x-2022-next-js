@@ -1,8 +1,9 @@
+// T O   B A S E   I N   "blog/[blogPost].js"
 // Dynamic Route Result: "/projects/[project]" (E.g: "/projects/lambo", "/projects/tesla", "/projects/ford")
 
 // Imports
-import { useRouter } from "next/router";//Access query parameters from the URL
 import Head from "next/head";
+import { useRouter } from "next/router";//Access query parameters from the URL
 
 // Project (Page) (Dynamic) Component
 export default function ProjectPage({ car }) {//Destructuring "car" prop to use here in "ProjectPage" component
