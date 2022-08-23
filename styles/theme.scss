@@ -1,0 +1,177 @@
+//----------------------------------General Styles----------------------------------//
+
+// General
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+html {
+  //background-color:$theme-color-beige;
+  text-rendering:optimizeLegibility;//geometricPrecision
+  font-smooth:always;
+  -webkit-font-smoothing:subpixel-antialiased;//antialiased
+  -moz-osx-font-smoothing:grayscale;
+}
+body {
+  min-height:100vh;
+  font-family:$font-light;
+  font-size:15px;//17px
+  background-color:$theme-color-beige;
+  color:$theme-color-grey-dark;
+  line-height:1.8;
+  letter-spacing:0.5px;
+  .text-italic {
+    font-family:$font-light-italic!important;
+  }
+}
+
+// Fonts
+h1, h2, h3, h4, h5, h6, .font-headline {
+  //letter-spacing:0;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family:$font-headline;
+}
+.font-headline {
+  font-family:$font-headline!important;
+}
+.font-regular {
+  font-family:$font-regular!important;
+  &.text-italic {
+    font-family:$font-regular-italic!important;
+  }
+}
+.font-light {
+  font-family:$font-light!important;
+  &.text-italic {
+    font-family:$font-light-italic!important;
+  }
+}
+.font-ultra-light {
+  font-family:$font-ultra-light!important;
+  &.text-italic {
+    font-family:$font-ultra-light-italic!important;
+  }
+}
+
+// Headline, Title, Subtitle
+.headline {
+  font-size:2.85rem;
+  line-height:1.02;
+}
+@media only screen and (max-width:576px) {//Down
+  .headline {
+    font-size:2.5rem;
+  }
+}
+@media only screen and (max-width:400px) {//Down
+  .headline {
+    font-size:1.6rem;
+  }
+}
+
+// Buttons
+button, a.button {
+  cursor:pointer;
+  //line-height:30px;
+}
+
+// Selection Styles
+::selection {//webkit, opera, IE9
+  background-color:rgba(105,169,179,0.7);
+}
+::-moz-selection {//mozilla firefox
+  background-color:rgba(105,169,179,0.7);
+}
+
+//----------------------------------Form Styles----------------------------------//
+
+// Input Placeholders
+::-webkit-input-placeholder {
+  font-family:$font-ultra-light;
+  font-size:20px;
+  color:$theme-color-chocolate;
+}
+:-moz-placeholder {//Firefox 18-
+  font-family:$font-ultra-light;
+  font-size:20px;
+  color:$theme-color-chocolate;
+}
+::-moz-placeholder {//Firefox 19+
+  font-family:$font-ultra-light;
+  font-size:20px;
+  color:$theme-color-chocolate;
+}
+:-ms-input-placeholder {
+  font-family:$font-ultra-light;
+  font-size:20px;
+  color:$theme-color-chocolate;
+}
+
+// Forms
+form {
+  select {
+    // -webkit-appearance:none;
+    // -moz-appearance:none;
+    // appearance:none;
+    > option {
+    }
+  }
+}
+
+// Container (¿? | To Revise/Check A 'Layout' Component To Wrap Everything | ¿To Use Bootstrap? Let's See)
+.container {//Temporary
+  //max-width:...;
+  padding:0 2rem;
+}
+
+//----------------------------------Section Styles----------------------------------//
+
+// Nav
+nav {
+}
+
+// Header
+header {
+  //flex:1;//As It Was//Not Needed Now
+  min-height:100vh;
+  padding:4rem 0;//Tempo//As It Was
+
+
+
+  // To errase/revise
+  span.logo {
+    height: 1em;//As It Was
+    margin-left: 0.5rem;//As It Was
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    &.title {
+      margin:0;//As It Was
+      font-size:4rem;//As It Was
+      line-height:1.15;//As It Was
+      //text-align:center;//As It Was
+    }
+  }
+
+
+
+}
+
+// Main
+main {
+  min-height:80vh;//Temporary
+  border-top:1px solid $theme-color-grey-dark;//Temporary
+  border-bottom:1px solid $theme-color-grey-dark;//Temporary
+}
+
+// Section
+section {
+}
+
+// Footer
+footer {
+  flex:1;//As It Was
+  padding:2rem 0;//Tempo//As It Was
+}

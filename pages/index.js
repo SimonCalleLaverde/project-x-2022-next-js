@@ -66,6 +66,7 @@ export default function HomePage({ allProjects }) {
   return (
     <>{/*className={ styles.container }*/}
 
+      {/* Temporary */}
       <Head>
         <title>Portfolio V3 2022 NextJS</title>
         <meta name="description" content="Portfolio V3 2022 NextJS using GraphCMS."/>
@@ -75,6 +76,7 @@ export default function HomePage({ allProjects }) {
         {/*<link href="https://db.onlinewebfonts.com/c/4c4c08af466e9ad071b6d69cf44093df?family=Saol+Display+Regular" rel="stylesheet" type="text/css"/>*/}{/*Option 2: "Old+Standard+TT"*/}
       </Head>
 
+      {/* Temporary */}
       <header className="display-flex justify-content-center align-items-center">{/*flex-direction-row*/}
         <div className="container">
           {/* Image Component Example Temporary */}

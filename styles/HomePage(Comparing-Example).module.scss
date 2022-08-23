@@ -1,0 +1,106 @@
+// Transferred to "theme.scss", removed module class, added normal 'classname'
+// .container {
+//   padding:0 2rem;
+// }
+
+// Transferred to "theme.scss", removed module class, added normal 'classname'
+// main.main {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   flex: 1;
+//   min-height: 100vh;
+//   padding: 4rem 0;
+// }
+
+// Transferred to "theme.scss", removed module class, added normal 'classname'
+// footer.footer {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   flex: 1;
+//   padding: 2rem 0;
+//   border-top: 1px solid #eaeaea;
+//   span.logo {
+//     height: 1em;
+//     margin-left: 0.5rem;
+//   }
+//   a {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     flex-grow: 1;
+//   }
+// }
+
+// Title, Description
+h1.title {//p.description
+  text-align:center;
+}
+h1.title {
+  margin:0;
+  font-size:4rem;
+  line-height:1.15;
+  // a {
+  //   color:#0070f3;
+  //   text-decoration:none;
+  //   &:hover, &:focus, &:active {
+  //     text-decoration:underline;
+  //   }
+  // }
+}
+// p.description {
+//   margin:4rem 0;
+//   font-size:1.5rem;
+//   line-height:1.5;
+// }
+// code.code {
+//   padding:0.75rem;
+//   background-color:#FAFAFA;
+//   font-family:Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,
+//   Bitstream Vera Sans Mono,Courier New,monospace;
+//   //From "globals.scss" [Deleted] | font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+//   font-size:1.1rem;
+//   border-radius:5px;
+// }
+
+// .grid {
+//   display:flex;
+//   //flex-direction:row;
+//   justify-content:center;
+//   align-items:center;
+//   flex-wrap:wrap;
+//   max-width:800px;
+//   a.card {
+//     margin:1rem;
+//     padding:1.5rem;
+//     max-width:300px;
+//     color:inherit;
+//     border:1px solid #EAEAEA;
+//     text-align:left;
+//     text-decoration:none;
+//     border-radius:10px;
+//     transition:color 0.15s ease, border-color 0.15s ease;
+//     h1, h2, h3, h4, h5, h6 {
+//       margin:0 0 1rem;//0 0 1rem 0
+//       font-size:1.5rem;
+//     }
+//     p {
+//       margin:0;
+//       font-size:1.25rem;
+//       line-height:1.5;
+//     }
+//     &:hover, &:focus, &:active {
+//       color:#0070F3;
+//       border-color:#0070F3;
+//     }
+//   }
+// }
+
+@media (max-width:600px) {//Down
+  // .grid {
+  //   width:100%;
+  //   flex-direction:column;
+  // }
+}
