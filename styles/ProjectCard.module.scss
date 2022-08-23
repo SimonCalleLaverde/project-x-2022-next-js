@@ -2,8 +2,8 @@
 
 // TEMPORARY
 .article {
-  margin:4rem 1rem;
-  padding:1rem;
+  margin:4rem 2rem;
+  padding:2rem;
   border:1px dotted #000;
   border-radius:1rem;
   > img {
@@ -11,7 +11,7 @@
     cursor:pointer;
     opacity:1;
     transition:opacity 0.3s ease;//ease-in-out
-    &:hover, &:focus, &:active {
+    &:hover, &:active, &:focus {
       opacity:0.7;
     }
   }
@@ -30,6 +30,7 @@
 // TEMPORARY
 @media screen and (max-width: 768px) {
   .article {
-    margin:3rem 2rem;
+    margin:3rem 1rem;
+    padding:1rem;
   }
 }

@@ -31,19 +31,25 @@ export default function ProjectCard({ title, slug, nameForThumbnail, client, thu
 				<h4 style={{marginTop:"0px"}}>Platforms: {platforms}</h4>
 
 
-
 				<h6 style={{marginBottom:"0px", color: "red"}}>To Revise "roles" As It Allows/May-Have Multiple Values. Might Need To Loop Through An Array</h6>
 				<h4 style={{marginTop:"0px"}}>Roles: {roles}</h4>
 
 
-
-				<h6 style={{marginBottom:"0px", color: "red"}}>To Revise "webImages" As It Allows/May-Have Multiple Values. Might Need To Loop Through An Array</h6>
-				<h4 style={{marginTop:"0px"}}>Web Images: {webImages.url}</h4>
-
-
-
 				<h6 style={{marginBottom:"0px", color: "red"}}>To Revise "tags" As It Allows/May-Have Multiple Values. Might Need To Loop Through An Array</h6>
 				<h4 style={{marginTop:"0px"}}>Tags: {tags}</h4>
+
+
+				<h6 style={{marginBottom:"0px", color: "red"}}>To Revise "webImages" As It Allows/May-Have Multiple Values. Might Need To Loop Through An Array</h6>
+				<h4 style={{marginTop:"0px"}}>
+					{/*Web Image [Index "0"]:<br/>{webImages[0].url}*/}
+					Web Images [All]: {webImages.map(image => (
+						<div key={image.url}>
+							{image.url}
+						</div>
+					))}
+				</h4>
+
+
 
 
 
