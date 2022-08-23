@@ -24,22 +24,7 @@ export default function ProjectCard({ title, slug, nameForThumbnail, client, thu
 				<h5>Web Launch URL: {webLaunchUrl}</h5>
 				<p>Content: {content.text}</p>
 
-
-
-
-				<h6 style={{marginBottom:"0px", color: "red"}}>To Revise "platforms" As It Allows/May-Have Multiple Values. Might Need To Loop Through An Array</h6>
-				<h4 style={{marginTop:"0px"}}>Platforms: {platforms}</h4>
-
-
-				<h6 style={{marginBottom:"0px", color: "red"}}>To Revise "roles" As It Allows/May-Have Multiple Values. Might Need To Loop Through An Array</h6>
-				<h4 style={{marginTop:"0px"}}>Roles: {roles}</h4>
-
-
-				<h6 style={{marginBottom:"0px", color: "red"}}>To Revise "tags" As It Allows/May-Have Multiple Values. Might Need To Loop Through An Array</h6>
-				<h4 style={{marginTop:"0px"}}>Tags: {tags}</h4>
-
-
-				<h6 style={{marginBottom:"0px", color: "red"}}>To Revise "webImages" As It Allows/May-Have Multiple Values. Might Need To Loop Through An Array</h6>
+				<h6 style={{marginBottom:"0px", color: "green"}}>Allows Multiple Values:</h6>
 				<h4 style={{marginTop:"0px"}}>
 					{/*Web Image [Index "0"]:<br/>{webImages[0].url}*/}
 					Web Images [All]: {webImages.map(image => (
@@ -49,11 +34,32 @@ export default function ProjectCard({ title, slug, nameForThumbnail, client, thu
 					))}
 				</h4>
 
+				<h6 style={{marginBottom:"0px", color: "green"}}>Allows Multiple Values:</h6>
+				<h4 style={{marginTop:"0px"}}>
+					Platforms [All]: {platforms.map(platform => (
+						<div key={platform}>
+							{platform}
+						</div>
+					))}
+				</h4>
 
+				<h6 style={{marginBottom:"0px", color: "green"}}>Allows Multiple Values:</h6>
+				<h4 style={{marginTop:"0px"}}>
+					Roles [All]: {roles.map(role => (
+						<div key={role}>
+							{role}
+						</div>
+					))}
+				</h4>
 
-
-
-
+				<h6 style={{marginBottom:"0px", color: "green"}}>Allows Multiple Values:</h6>
+				<h4 style={{marginTop:"0px"}}>
+					Tags [All]: {tags.map(tag => (
+						<div key={tag}>
+							{tag}
+						</div>
+					))}
+				</h4>
 			</div>
 
 			{/* TEMPORARY // TO REVISE "moment.js" FOR DATES // USED IN MY "next-js-blog-graphcms" */}
