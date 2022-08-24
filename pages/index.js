@@ -73,7 +73,8 @@ export default function HomePage({ allProjects }) {
         <link rel="icon" href="/favicon.ico"/>
 
         {/* Fonts */}
-        {/*<link href="https://db.onlinewebfonts.com/c/4c4c08af466e9ad071b6d69cf44093df?family=Saol+Display+Regular" rel="stylesheet" type="text/css"/>*/}{/*Option 2: "Old+Standard+TT"*/}
+        {/*Option 2: "Old+Standard+TT"*/}
+        <link href="https://db.onlinewebfonts.com/c/4c4c08af466e9ad071b6d69cf44093df?family=Saol+Display+Regular" rel="stylesheet" type="text/css"/>
       </Head>
 
       {/* Temporary */}
