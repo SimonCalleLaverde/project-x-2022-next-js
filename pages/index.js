@@ -5,8 +5,9 @@ import Image from "next/image";
 import styles from "../styles/HomePage.module.scss";//I'm Modifying
 import { GraphQLClient, gql } from "graphql-request";
 import ProjectCard from "../components/ProjectCard";
+import Footer from "../components/Footer.js";
 
-// THIS PART BELOW IS FETCHING CONTENT USING GRAPHCMS [START]
+//----------------------------------THIS PART BELOW IS FETCHING CONTENT USING GRAPHCMS [START]----------------------------------//
 
 // API Access Endpoint Token (Found at: "GraphCMS > Project > Project Settings > API Access > Content API")
 const accessEndpoint = "https://api-us-east-1.hygraph.com/v2/cl5ketcvx2wnm01ta90nhcdmy/master";
@@ -59,14 +60,14 @@ export async function getStaticProps() {
   }
 };
 
-// THIS PART ABOVE IS FETCHING CONTENT USING GRAPHCMS [END]
+//----------------------------------THIS PART ABOVE IS FETCHING CONTENT USING GRAPHCMS [END]----------------------------------//
 
 // Home (Page) Component
 export default function HomePage({ allProjects }) {
   return (
     <>{/*className={ styles.container }*/}
 
-      {/* Temporary */}
+      {/* To Check <Head/> As I Was Doing In "portfolio-V3-2022-next-js" */}
       <Head>
         <title>Portfolio V3 2022 NextJS</title>
         <meta name="description" content="Portfolio V3 2022 NextJS using GraphCMS."/>
@@ -85,9 +86,8 @@ export default function HomePage({ allProjects }) {
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16}/>
           </span>*/}
 
-          {/* Temporary */}
           <h1 className="title">{/*{styles.title}*/}
-            Portfolio V3 2022 Next.js
+            Portfolio V3 2022 NextJS
           </h1>
         </div>
       </header>
@@ -120,17 +120,7 @@ export default function HomePage({ allProjects }) {
       </main>
 
       {/* Temporary */}
-      <footer className="display-flex justify-content-center align-items-center">{/*{styles.footer}*/}
-        <div className="container">
-          <span>
-            Designed & Developed by{" "}
-          </span>
-
-          <a href="https://simoncallelaverde.github.io/" target="_blank">
-            Simón Calle Laverde
-          </a>
-        </div>
-      </footer>
+      <Footer/>
 
     </>
   )
