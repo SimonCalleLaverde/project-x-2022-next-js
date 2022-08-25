@@ -73,6 +73,10 @@ export default function HomePage({ allProjects }) {
         <meta name="description" content="Portfolio V3 2022 NextJS using GraphCMS."/>
         <link rel="icon" href="/favicon.ico"/>
 
+        {/* TERMINAL's WARNING/STEPS-TO-FOLLOW */}
+        {/* Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="https://db.onlinewebfonts.com/c/4c4c08af466e9ad071b6d69cf44093df?family=Saol+Display+Regular"). Use Document instead. 
+        See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component */}
+
         {/* Fonts */}
         {/*Option 2: "Old+Standard+TT"*/}
         <link href="https://db.onlinewebfonts.com/c/4c4c08af466e9ad071b6d69cf44093df?family=Saol+Display+Regular" rel="stylesheet" type="text/css"/>
@@ -81,12 +85,7 @@ export default function HomePage({ allProjects }) {
       {/* Temporary */}
       <header className="display-flex justify-content-center align-items-center">{/*flex-direction-row*/}
         <div className="container">
-          {/* Image Component Example Temporary */}
-          {/*<span className={ styles.logo }>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16}/>
-          </span>*/}
-
-          <h1 className="title">{/*{styles.title}*/}
+          <h1 className="headline">{/*{styles.title}*/}
             Portfolio V3 2022 NextJS
           </h1>
         </div>

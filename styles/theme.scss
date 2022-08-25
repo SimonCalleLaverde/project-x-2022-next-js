@@ -6,6 +6,12 @@
   padding:0;
   box-sizing:border-box;
 }
+
+// NextJS Original Fonts
+// html, body {
+//   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+// }
+
 html {
   //background-color:$theme-color-beige;
   text-rendering:optimizeLegibility;//geometricPrecision
@@ -56,7 +62,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 // Headline, Title, Subtitle
-.headline {
+.headline {//Targets 768px Down & 576px All The Way Up If No Styles Are Added/Overriding In Tablet-And-Desktop Or Down Here
   font-size:2.85rem;
   line-height:1.02;
 }
@@ -83,6 +89,12 @@ button, a.button {
 }
 ::-moz-selection {//mozilla firefox
   background-color:rgba(105,169,179,0.7);
+}
+
+// Container (¿? | To Revise/Check A 'Layout' Component To Wrap Everything | ¿To Use Bootstrap? Let's See)
+.container {//Temporary
+  //max-width:...;
+  padding:0 2rem;
 }
 
 //----------------------------------Form Styles----------------------------------//
@@ -120,12 +132,6 @@ form {
   }
 }
 
-// Container (¿? | To Revise/Check A 'Layout' Component To Wrap Everything | ¿To Use Bootstrap? Let's See)
-.container {//Temporary
-  //max-width:...;
-  padding:0 2rem;
-}
-
 //----------------------------------Section Styles----------------------------------//
 
 // Nav
@@ -134,29 +140,14 @@ nav {
 
 // Header
 header {
-  //flex:1;//As It Was//Not Needed Now
+  //flex:1;
   min-height:100vh;
-  padding:4rem 0;//Tempo//As It Was
-
-
-
-  // To errase/revise
-  span.logo {
-    height: 1em;//As It Was
-    margin-left: 0.5rem;//As It Was
-  }
-
-  h1, h2, h3, h4, h5, h6 {
+  padding:4rem 0;//Temporary
+  h1, h2, h3, h4, h5, h6 {//Temporary
     &.title {
-      margin:0;//As It Was
-      font-size:4rem;//As It Was
-      line-height:1.15;//As It Was
-      //text-align:center;//As It Was
+      margin:0;
     }
   }
-
-
-
 }
 
 // Main
@@ -172,6 +163,6 @@ section {
 
 // Footer
 footer {
-  flex:1;//As It Was
-  padding:2rem 0;//Tempo//As It Was
+  //flex:1;
+  padding:2rem 0;//Temporary
 }
