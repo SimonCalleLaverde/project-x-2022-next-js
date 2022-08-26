@@ -153,24 +153,10 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-
-
-
 // Website Colours
 .text-rosybrown {
   color:lighten(theme-color("rosybrown"),10)!important;
-  //color:lighten($theme-color-rosybrown,10)!important;
-
-
-
-  color:theme-color("rosybrown");
-  color:$theme-color-rosybrown;
-
 }
-
-
-
-
 
 // Link Override Styles
 a {
