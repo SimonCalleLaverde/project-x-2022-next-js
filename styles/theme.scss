@@ -62,18 +62,153 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 // Headline, Title, Subtitle
+.headline, .title, .subtitle {
+}
 .headline {//Targets 768px Down & 576px All The Way Up If No Styles Are Added/Overriding In Tablet-And-Desktop Or Down Here
   font-size:2.85rem;
   line-height:1.02;
 }
+.text-hero {
+  font-size:4.3rem;
+  line-height:1.5;
+}
+.text-gigantic {
+  font-size:3.7rem;
+  line-height:0.88;
+}
+.text-intro, .text-huge {
+  font-size:2.85rem;
+}
+.text-intro {
+  line-height:1.19;
+}
+.text-huge {
+  line-height:1.02;
+}
+.text-big {
+  font-size:2rem;
+}
+.text-medium {
+  font-size:1.7rem;//1.2rem
+}
+.text-small {
+  font-size:1.1rem;
+}
+// .text-stroke-rosybrown {
+//   color:transparent!important;
+//   -webkit-text-fill-color:theme-color('transparent');//Will Override Color (Regardless Of Order)
+//   -webkit-text-stroke-width:1px;
+//   -webkit-text-stroke-color:theme-color('rosybrown');
+// }
+// .text-stroke-chocolate {
+//   color:transparent!important;
+//   -webkit-text-fill-color:theme-color('transparent');//Will Override Color (Regardless Of Order)
+//   -webkit-text-stroke-width:1px;
+//   -webkit-text-stroke-color:theme-color('chocolate');
+// }
 @media only screen and (max-width:576px) {//Down
   .headline {
     font-size:2.5rem;
+  }
+  .text-hero {
+    font-size:3.4rem;
+  }
+  .text-gigantic {
+    font-size:3rem;
+  }
+  .text-gigantic {
+    line-height:1;
+  }
+  .text-intro, .text-huge {
+    font-size:2.5rem;
+  }
+  .text-big {
+    font-size:1.8rem;
+  }
+  .text-medium {
+    font-size:1.6rem;
   }
 }
 @media only screen and (max-width:400px) {//Down
   .headline {
     font-size:1.6rem;
+  }
+  .text-hero {//, .text-gigantic
+    font-size:2.5rem;
+  }
+  .text-gigantic {//.text-hero,
+    font-size:2.1rem;
+  }
+  .text-intro {//, .text-huge
+    font-size:1.8rem;
+  }
+  .text-huge {//.text-intro,
+    font-size:1.6rem;
+  }
+  .text-big {
+    font-size:1.4rem;
+  }
+  .text-medium {
+    font-size:1.2rem;
+  }
+}
+
+
+
+
+// Website Colours
+.text-rosybrown {
+  color:lighten(theme-color("rosybrown"),10)!important;
+  //color:lighten($theme-color-rosybrown,10)!important;
+
+
+
+  color:theme-color("rosybrown");
+  color:$theme-color-rosybrown;
+
+}
+
+
+
+
+
+// Link Override Styles
+a {
+  color:lighten($theme-color-rosybrown,10);
+  transition:all ease 0.5s;//ease-out
+  &:hover, &:active, &:focus {
+    color:lighten($theme-color-rosybrown,20);
+    text-decoration:none;
+  }
+  // &.text-black {
+  //   &:hover, &:active, &:focus {
+  //     color:lighten(#000,15)!important;
+  //   }
+  // }
+  // &.text-white {
+  //   &:hover, &:active, &:focus {
+  //     color:darken(#FFF,15)!important;
+  //   }
+  // }
+  // &.text-grey-dark {
+  //   &:hover, &:active, &:focus {
+  //     color:lighten($theme-color-grey-dark,15)!important;
+  //   }
+  // }
+  // &.text-grey-mid {
+  //   &:hover, &:active, &:focus {
+  //     color:lighten($theme-color-grey-mid,15)!important;
+  //   }
+  // }
+  // &.text-grey-light {
+  //   &:hover, &:active, &:focus {
+  //     color:darken($theme-color-grey-light,15)!important;
+  //   }
+  // }
+  &.text-rosybrown {
+    &:hover, &:active, &:focus {
+      color:lighten($theme-color-rosybrown,10)!important;
+    }
   }
 }
 
@@ -144,7 +279,7 @@ header {
   min-height:100vh;
   padding:4rem 0;//Temporary
   h1, h2, h3, h4, h5, h6 {//Temporary
-    &.title {
+    &.headline {//.title
       margin:0;
     }
   }

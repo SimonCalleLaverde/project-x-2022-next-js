@@ -65,7 +65,7 @@ export async function getStaticProps() {
 // Home (Page) Component
 export default function HomePage({ allProjects }) {
   return (
-    <>{/*className={ styles.container }*/}
+    <>
 
       {/* To Check <Head/> As I Was Doing In "portfolio-V3-2022-next-js" */}
       <Head>
@@ -93,29 +93,31 @@ export default function HomePage({ allProjects }) {
 
       {/* Temporary */}
       <main>{/*{ styles.main }*/}
-        <div className="container">
-          {/* Mapping through "allProjects" and displaying each "project", in a "ProjectCard" component */}
-          {allProjects.map(project => (
-            <ProjectCard
-              key={project.id}
-              title={project.title}
-              slug={project.slug}
-              nameForThumbnail={project.nameForThumbnail}
-              client={project.client}
-              thumbnailImage={project.thumbnailImage}
-              headerImage={project.headerImage}
-              platforms={project.platforms}
-              year={project.year}
-              roles={project.roles}
-              webLaunchUrl={project.webLaunchUrl}
-              webImages={project.webImages}
-              type={project.type}
-              category={project.category}
-              tags={project.tags}
-              content={project.content}
-            />
-          ))}
-        </div>
+        <section className="projects-section">
+          <div className="container">{/*className={ styles.container }*/}{/*Was wrapping "main" before*/}
+            {/* Mapping through "allProjects" and displaying each "project", in a "ProjectCard" component */}
+            {allProjects.map(project => (
+              <ProjectCard
+                key={project.id}
+                title={project.title}
+                slug={project.slug}
+                nameForThumbnail={project.nameForThumbnail}
+                client={project.client}
+                thumbnailImage={project.thumbnailImage}
+                headerImage={project.headerImage}
+                platforms={project.platforms}
+                year={project.year}
+                roles={project.roles}
+                webLaunchUrl={project.webLaunchUrl}
+                webImages={project.webImages}
+                type={project.type}
+                category={project.category}
+                tags={project.tags}
+                content={project.content}
+              />
+            ))}
+          </div>
+        </section>
       </main>
 
       {/* Temporary */}
