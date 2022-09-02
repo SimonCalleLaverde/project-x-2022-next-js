@@ -284,6 +284,16 @@ section {
 
 // Footer
 footer {
+
+
+
+  min-height:100vh;////Temporary
+  > a {
+    min-height:100vh;////Temporary
+  }
+
+
+
   //flex:1;
   padding:2rem 0;//Temporary
 }

@@ -1,4 +1,7 @@
-// REVISING (FILE WAS BASED ON MY "next-js-blog-graphcms", NOW VERY CHANGED, TO START WITH)
+// FILE WAS BASED ON MY "next-js-blog-graphcms", NOW VERY CHANGED, TO START WITH
+
+// Mixins Styles
+@import "styles/mixins";
 
 // TEMPORARY
 .article {
@@ -10,7 +13,7 @@
     max-width:500px;
     cursor:pointer;
     opacity:1;
-    transition:opacity 0.3s ease;//ease-in-out
+    @include transition(opacity 0.3s ease);//ease-in-out
     &:hover, &:active, &:focus {
       opacity:0.7;
     }
