@@ -40,7 +40,7 @@ export default function Footer() {
         </div>
       </a>
 
-      {/* Mobile (Missing) */}
+      {/* Mobile Missing (.container) // To look up in "Portfolio 2021" */}
 
       <aside className="footer-info-elements text-rosybrown">
         <div className="footer-hello">
@@ -99,6 +99,14 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Desktop | Screen Readers */}
+        <div className="footer-copyright font-ultra-light">
+          © {/* {{ "now" | date: "%Y" }} */}2022 Simón Calle Laverde{/*{{ site.url }}*/}
+          <br/>All rights reserved
+        </div>
+
+        {/* Mobile Missing (.footer-copyright) // To look up in "Portfolio 2021" */}
+
 
 
 
@@ -107,6 +115,10 @@ export default function Footer() {
 
 
 
+        {/*https://dribbble.com/simoncallelaverde
+        https://co.pinterest.com/simoncallelaverde
+        https://www.instagram.com/simons_pic_tures/
+        https://www.facebook.com/simoncio/*/}
       </aside>
 		</footer>
 	)
