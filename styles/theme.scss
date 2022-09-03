@@ -291,6 +291,15 @@ footer {
   > a {
     min-height:100vh;////Temporary
   }
+  .footer-business-social, .footer-personal-social {
+    a {
+      > span {
+        svg {
+          width:20px;////Temporary
+        }
+      }
+    }
+  }
 
 
 
