@@ -1,5 +1,16 @@
 @media only screen and (min-width:768px) {//Up
 
+  //----------------------------------General Styles----------------------------------//
+
+  // General
+  body {
+  }
+
+  // Main, Header, Section, Footer
+  main, header, section, footer {
+    text-align:left;
+  }
+
   // Headline, Title, Subtitle
   .headline {//Targets From 768px All The Way Up, Or Up To 850px If Styles Are Added/Overriding Down Here
     font-size:2.6rem;
@@ -85,6 +96,55 @@
     }
     .text-small {
       font-size:1.4rem;
+    }
+  }
+
+  //----------------------------------Section Styles----------------------------------//
+
+  // REVISING
+  // Footer
+  footer {
+    aside.footer-info-elements {
+
+
+
+      .footer-hello {
+        bottom:370px;
+      }
+      .footer-office {
+        bottom:220px;
+      }
+      .footer-business-social {
+        bottom:115px;//120px
+      }
+      .footer-copyright {
+        bottom:30px;
+      }
+      .footer-email-or-call {
+        bottom:30px;
+      }
+      .footer-created-by {
+        bottom:30px;
+      }
+      .footer-personal-social {
+        bottom:115px;//120px
+      }
+      nav.footer-nav {//.navbar
+        bottom:220px;//228px
+        ul.footer-nav-ul {//navbar-nav
+          li.footer-nav-li {//nav-item
+            a.footer-nav-link {//nav-link
+              text-transform:none;
+            }
+          }
+        }
+      }
+      .footer-credits {
+        bottom:370px;
+      }
+
+
+
     }
   }
 

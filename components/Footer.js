@@ -1,3 +1,5 @@
+// Missing To Implement "<Link/>" Component In Every "<a></a>"
+
 // Imports
 import Link from "next/link";
 import Image from "next/image";
@@ -16,6 +18,9 @@ import IconFacebook from "../components/icons/IconFacebook.js";
 export default function Footer() {
 	return (
 		<footer>{/*{styles.footer}*/}{/*className="clearfix"*/}
+
+
+
       {/*<div className="container">
         <span>
           Designed & Developed by{" "}
@@ -25,6 +30,8 @@ export default function Footer() {
           Simón Calle Laverde
         </a>
       </div>*/}
+
+
 
       {/* Desktop | Screen Readers */}
       <a className="container display-flex justify-content-center align-items-center text-center" href="/contact">{/*link-page-load*/}{/*href="javascript:delay('/hire_a_project')"*/}
@@ -172,43 +179,47 @@ export default function Footer() {
           </span>
         </div>
 
-        <nav className="footer-nav">{/*REMOVED EXTRA "navbar"*/}
-          <ul className="footer-nav-ul">{/*NEW TO STYLE "footer-nav-ul" INSTEAD OF "navbar-nav"*/}
-
-
-
-            <li className="footer-nav-li">{/*NEW TO STYLE "footer-nav-li" INSTEAD OF "nav-item"*/}
-              <a className="footer-nav-link link-line-throught" href="/">{/*javascript:delay('/')*/}{/*link*/}{/*link-page-load*/}{/*NEW TO STYLE "footer-nav-link" INSTEAD OF "nav-link"*/}{/*{% if page.slug == 'home' %} active-link{% endif %}*/}
+        <nav className="footer-nav">{/*navbar*/}
+          <ul className="footer-nav-ul">{/*navbar-nav*/}
+            <li className="footer-nav-li">{/*nav-item*/}
+              {/*javascript:delay('/')*/}
+              {/*{% if page.slug == 'home' %} active-link{% endif %}*/}
+              <a className="footer-nav-link link-line-throught" href="/">{/*nav-link*/}{/*link*/}{/*link-page-load*/}
                 <span>Home</span>
               </a>
             </li>
 
-            <li className="footer-nav-li">{/*NEW TO STYLE "footer-nav-li" INSTEAD OF "nav-item"*/}
-              <a className="footer-nav-link link-line-throught" href="/about">{/*javascript:delay('/about')*/}{/*link*/}{/*link-page-load*/}{/*NEW TO STYLE "footer-nav-link" INSTEAD OF "nav-link"*/}{/*{% if page.slug == 'about' %} active-link{% endif %}*/}
+            <li className="footer-nav-li">{/*nav-item*/}
+              {/*javascript:delay('/about')*/}
+              {/*{% if page.slug == 'about' %} active-link{% endif %}*/}
+              <a className="footer-nav-link link-line-throught" href="/about">{/*nav-link*/}{/*link*/}{/*link-page-load*/}
                 <span>About{/* me*/}</span>
               </a>
             </li>
 
-            <li className="footer-nav-li">{/*NEW TO STYLE "footer-nav-li" INSTEAD OF "nav-item"*/}
-              <a className="footer-nav-link link-line-throught" href="/projects">{/*javascript:delay('/projects')*/}{/*link*/}{/*link-page-load*/}{/*NEW TO STYLE "footer-nav-link" INSTEAD OF "nav-link"*/}{/*{% if page.slug == 'projects' %} active-link{% endif %}*/}
+            <li className="footer-nav-li">{/*nav-item*/}
+              {/*javascript:delay('/projects')*/}
+              {/*{% if page.slug == 'projects' %} active-link{% endif %}*/}
+              <a className="footer-nav-link link-line-throught" href="/projects">{/*nav-link*/}{/*link*/}{/*link-page-load*/}
                 <span>All projects</span>
               </a>
             </li>
 
-            <li className="footer-nav-li">{/*NEW TO STYLE "footer-nav-li" INSTEAD OF "nav-item"*/}
-              <a className="footer-nav-link link-line-throught" href="/contact">{/*javascript:delay('/contact_me')*/}{/*link*/}{/*link-page-load*/}{/*NEW TO STYLE "footer-nav-link" INSTEAD OF "nav-link"*/}{/*{% if page.slug == 'contact_me' %} active-link{% endif %}*/}{/*if page.type_slug == 'feedback'*/}
+            <li className="footer-nav-li">{/*nav-item*/}
+              {/*javascript:delay('/contact_me')*/}
+              {/*{% if page.slug == 'contact_me' %} active-link{% endif %} // if page.type_slug == 'feedback'*/}
+              <a className="footer-nav-link link-line-throught" href="/contact">{/*nav-link*/}{/*link*/}{/*link-page-load*/}
                 <span>Contact{/* me*/}</span>
               </a>
             </li>
 
-            <li className="footer-nav-li">{/*NEW TO STYLE "footer-nav-li" INSTEAD OF "nav-item"*/}
-              <a className="footer-nav-link link-line-throught" href="/hire-a-project">{/*javascript:delay('/hire_a_project')*/}{/*link*/}{/*link-page-load*/}{/*NEW TO STYLE "footer-nav-link" INSTEAD OF "nav-link"*/}{/*{% if page.slug == 'hire_a_project' %} active-link{% endif %}*/}
+            <li className="footer-nav-li">{/*nav-item*/}
+              {/*javascript:delay('/hire_a_project')*/}
+              {/*{% if page.slug == 'hire_a_project' %} active-link{% endif %}*/}
+              <a className="footer-nav-link link-line-throught" href="/hire-a-project">{/*nav-link*/}{/*link*/}{/*link-page-load*/}
                 <span>Hire a project</span>
               </a>
             </li>
-
-
-
           </ul>
         </nav>
       </aside>

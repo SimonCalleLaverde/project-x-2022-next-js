@@ -32,6 +32,12 @@ body {
   }
 }
 
+// Main, Header, Section, Footer
+main, header, section, footer {
+  position:relative;
+  text-align:center;
+}
+
 // Fonts
 h1, h2, h3, h4, h5, h6, .font-headline {
   //letter-spacing:0;
@@ -161,7 +167,7 @@ h1, h2, h3, h4, h5, h6 {
 // Link Override Styles
 a {
   color:lighten($theme-color-rosybrown,10);
-  transition:all ease 0.5s;//ease-out
+  @include transition(all ease 0.5s);//ease-out
   &:hover, &:active, &:focus {
     color:lighten($theme-color-rosybrown,20);
     text-decoration:none;
@@ -197,6 +203,37 @@ a {
     }
   }
 }
+
+
+
+a.link-line-throught {
+  position:relative;
+  &::before {
+    content:'';
+    position:absolute;
+    height:2px;//30%
+    width:0;
+    //top:50%;//40%
+    right:0;
+    bottom:0;//
+    //left:0;
+    background-color:theme-color('rosybrown');//#CE1352
+    border-bottom:1px solid theme-color('chocolate');//rosybrown
+    pointer-events:none;
+    //mix-blend-mode:difference;
+    @include filter(opacity(0.8));//0.4//0.3//0.8
+    @include transition(width 0.4s ease-in-out);
+  }
+  &:hover, &:active, &:focus, &.active-link {
+    &::before {
+      width:100%;
+      right:auto;
+      left:0;
+    }
+  }
+}
+
+
 
 // Buttons
 button, a.button {
@@ -282,27 +319,232 @@ main {
 section {
 }
 
+// REVISING
 // Footer
 footer {
+  //flex:1;
+  margin:0;
+  padding:2rem 0;////Temporary
 
 
 
-  min-height:100vh;////Temporary
-  > a {
-    min-height:100vh;////Temporary
-  }
-  .footer-business-social, .footer-personal-social {
-    a {
-      > span {
-        svg {
-          width:20px;////Temporary
-        }
+  > .container {//a.container
+    min-height:100vh;
+    > div {
+      pointer-events:none;//From "row", To All Elements Inside <a>
+      h1, h2, h3, h4, h5, h6 {
+      }
+      p {
+        font-size:23px;
+        line-height:1.2;
       }
     }
   }
-
-
-
-  //flex:1;
-  padding:2rem 0;//Temporary
+  aside.footer-info-elements {
+    .footer-hello, .footer-office, .footer-business-social, .footer-copyright, .footer-email-or-call, .footer-created-by, .footer-personal-social, nav.footer-nav, .footer-credits {
+      position:absolute;
+      font-size:12px;
+      opacity:(0.9);//@include filter(opacity(0.9))
+      // a {
+      //   position:relative;
+      //   &::before {
+      //     content:'';
+      //     position:absolute;
+      //     width:0;
+      //     top:50%;
+      //     right:0;
+      //     //left:0;
+      //     border-bottom:1px solid theme-color('rosybrown');
+      //     pointer-events:none;
+      //     @include transition(width 0.3s ease-in-out);
+      //   }
+      //   &:hover, &:active, &:focus {
+      //     &::before {
+      //       width:100%;
+      //       right:auto;
+      //       left:0;
+      //     }
+      //   }
+      // }
+    }
+    .footer-business-social, .footer-personal-social {
+      overflow:hidden;
+      a {
+        &::before {
+          display:none;
+        }
+        > span {
+          position:relative;
+          font-size:15.5px;
+          //pointer-events:none;
+          > svg {
+            position:relative;
+            width:17px;
+            font-size:1.2rem;
+            fill:theme-color('rosybrown')!important;
+            z-index:21;
+            @include transition(all ease-out 0.5s);
+          }
+          &::before {
+            content:'';
+            position:absolute;
+            width:27px;
+            height:27px;
+            top:-2.8px;//-2px
+            left:-5px;
+            background-color:theme-color('rosybrown');
+            z-index:20;
+            @include border-radius(50%);
+            @include filter(opacity(0));
+            @include transform(translateY(30px));
+            //@include transform-origin(center bottom);
+            @include transition(filter ease-out 0.4s, transform ease-out 0.4s);
+          }
+          &.icon-linkedin {
+            svg {
+              width:14px;
+              margin-top:-1px;
+              margin-left:2px;
+            }
+          }
+          &.icon-behance {
+            svg {
+              width:18px;
+            }
+          }
+          &.icon-angel {
+            svg {
+              width:14px;
+              margin-left:1px;
+            }
+          }
+          // &.icon-github {
+          //   svg {
+          //   }
+          // }
+          // &.icon-dribbble {
+          //   svg {
+          //   }
+          // }
+          // &.icon-pinterest {
+          //   svg {
+          //   }
+          // }
+          // }
+          &.icon-instagram {
+            svg {
+              //width:16px;
+            }
+          }
+          &.icon-facebook {
+            svg {
+              width:15px;
+            }
+          }
+        }
+        &:hover, &:active, &:focus {
+          span {
+            svg {
+              fill:theme-color('chocolate')!important;
+            }
+            &::before {
+              @include filter(opacity(1));
+              @include transform(translateY(0));
+            }
+          }
+        }
+      }
+    }
+    .footer-hello {
+      bottom:310px;
+      left:37px;
+      line-height:1.5;
+      text-align:left;
+    }
+    .footer-office {
+      bottom:180px;
+      left:37px;
+      text-align:left;
+    }
+    .footer-business-social {
+      padding:0 7px 5px;
+      bottom:95px;
+      left:30px;//37px
+    }
+    .footer-copyright {
+      bottom:30px;
+      left:37px;
+      text-align:left;
+    }
+    .footer-email-or-call {
+      bottom:30px;
+      left:50%;
+      text-align:center;
+      @include transform(translateX(-50%));
+    }
+    .footer-created-by {
+      right:37px;
+      bottom:30px;
+      text-align:right;
+    }
+    .footer-personal-social {
+      padding:0 7px 5px;
+      right:30px;//37px
+      bottom:95px;
+      text-align:right;
+    }
+    nav.footer-nav {//.navbar
+      padding:0;
+      top:auto;
+      right:37px;
+      bottom:188px;
+      line-height:1.5!important;
+      text-align:right;
+      ul.footer-nav-ul {//navbar-nav
+        li.footer-nav-li {//nav-item
+          a.footer-nav-link {//nav-link
+            display:inline-block;
+            margin:0.1rem auto;
+            padding:0 0.1rem;
+            font-family:$font-ultra-light;
+            font-size:12px;
+            color:theme-color('rosybrown');
+            //text-transform:uppercase;
+            // &::before {
+            //   display:none;
+            // }
+            &:hover, &:active, &:focus, &.active-link {
+              color:lighten(theme-color('rosybrown'),10);
+              @include transform(scale(1));
+            }
+            &.active-link {
+              filter:opacity(1);//0.7
+            }
+            &.link-line-throught {
+              &::before {
+                bottom:2px;//
+              }
+            }
+          }
+        }
+      }
+    }
+    .footer-credits {
+      right:37px;
+      bottom:310px;
+      line-height:1.5;
+      text-align:right;
+    }
+  }
 }
+@media only screen and (max-width:400px) {//Down
+  footer {
+    aside.footer-info-elements {
+      .footer-hello, .footer-office, .footer-business-social, .footer-copyright, .footer-email-or-call, .footer-created-by, .footer-personal-social, nav.footer-nav, .footer-credits {
+        font-size:11px;
+      }
+    }
+  }
+}
+
+
