@@ -13,7 +13,7 @@
 // }
 
 html {
-  //background-color:$theme-color-beige;
+  //background-color:theme-color("beige");
   text-rendering:optimizeLegibility;//geometricPrecision
   font-smooth:always;
   -webkit-font-smoothing:subpixel-antialiased;//antialiased
@@ -23,8 +23,8 @@ body {
   min-height:100vh;
   font-family:$font-light;
   font-size:15px;//17px
-  background-color:$theme-color-beige;
-  color:$theme-color-grey-dark;
+  background-color:theme-color("beige");
+  color:theme-color("grey-dark");
   line-height:1.8;
   letter-spacing:0.5px;
   .text-italic {
@@ -102,15 +102,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 // .text-stroke-rosybrown {
 //   color:transparent!important;
-//   -webkit-text-fill-color:theme-color('transparent');//Will Override Color (Regardless Of Order)
+//   -webkit-text-fill-color:theme-color("transparent");//Will Override Color (Regardless Of Order)
 //   -webkit-text-stroke-width:1px;
-//   -webkit-text-stroke-color:theme-color('rosybrown');
+//   -webkit-text-stroke-color:theme-color("rosybrown");
 // }
 // .text-stroke-chocolate {
 //   color:transparent!important;
-//   -webkit-text-fill-color:theme-color('transparent');//Will Override Color (Regardless Of Order)
+//   -webkit-text-fill-color:theme-color("transparent");//Will Override Color (Regardless Of Order)
 //   -webkit-text-stroke-width:1px;
-//   -webkit-text-stroke-color:theme-color('chocolate');
+//   -webkit-text-stroke-color:theme-color("chocolate");
 // }
 @media only screen and (max-width:576px) {//Down
   .headline {
@@ -166,10 +166,11 @@ h1, h2, h3, h4, h5, h6 {
 
 // Link Override Styles
 a {
-  color:lighten($theme-color-rosybrown,10);
+  color:lighten(theme-color("rosybrown"),10);
+  text-decoration:none;////New
   @include transition(all ease 0.5s);//ease-out
   &:hover, &:active, &:focus {
-    color:lighten($theme-color-rosybrown,20);
+    color:lighten(theme-color("rosybrown"),20);
     text-decoration:none;
   }
   // &.text-black {
@@ -184,7 +185,7 @@ a {
   // }
   // &.text-grey-dark {
   //   &:hover, &:active, &:focus {
-  //     color:lighten($theme-color-grey-dark,15)!important;
+  //     color:lighten(theme-color("grey-dark"),15)!important;
   //   }
   // }
   // &.text-grey-mid {
@@ -199,13 +200,14 @@ a {
   // }
   &.text-rosybrown {
     &:hover, &:active, &:focus {
-      color:lighten($theme-color-rosybrown,10)!important;
+      color:lighten(theme-color("rosybrown"),10)!important;
     }
   }
 }
 
 
 
+// Link Line Throught
 a.link-line-throught {
   position:relative;
   &::before {
@@ -217,8 +219,8 @@ a.link-line-throught {
     right:0;
     bottom:0;//
     //left:0;
-    background-color:theme-color('rosybrown');//#CE1352
-    border-bottom:1px solid theme-color('chocolate');//rosybrown
+    background-color:theme-color("rosybrown");//#CE1352
+    border-bottom:1px solid theme-color("chocolate");//rosybrown
     pointer-events:none;
     //mix-blend-mode:difference;
     @include filter(opacity(0.8));//0.4//0.3//0.8
@@ -311,28 +313,25 @@ header {
 // Main
 main {
   min-height:80vh;//Temporary
-  border-top:1px solid $theme-color-grey-dark;//Temporary
-  border-bottom:1px solid $theme-color-grey-dark;//Temporary
+  border-top:1px solid theme-color("grey-dark");//Temporary
+  border-bottom:1px solid theme-color("grey-dark");//Temporary
 }
 
 // Section
 section {
 }
 
-// REVISING
 // Footer
 footer {
   //flex:1;
   margin:0;
   padding:2rem 0;////Temporary
-
-
-
-  > .container {//a.container
+  > .container {//a.container//To Modify also mobile which doesn't have "a"
     min-height:100vh;
     > div {
       pointer-events:none;//From "row", To All Elements Inside <a>
       h1, h2, h3, h4, h5, h6 {
+        margin-bottom:0;////New
       }
       p {
         font-size:23px;
@@ -340,11 +339,15 @@ footer {
       }
     }
   }
-  aside.footer-info-elements {
-    .footer-hello, .footer-office, .footer-business-social, .footer-copyright, .footer-email-or-call, .footer-created-by, .footer-personal-social, nav.footer-nav, .footer-credits {
+  > aside.footer-aside-info-elements {
+    .footer-availability, .footer-office, .footer-business-social, .footer-copyright, .footer-email-or-call, .footer-created-by, .footer-personal-social, .footer-credits, nav.footer-nav {
       position:absolute;
       font-size:12px;
-      opacity:(0.9);//@include filter(opacity(0.9))
+      @include filter(opacity(0.9));//opacity:0.9
+
+
+
+
       // a {
       //   position:relative;
       //   &::before {
@@ -354,7 +357,7 @@ footer {
       //     top:50%;
       //     right:0;
       //     //left:0;
-      //     border-bottom:1px solid theme-color('rosybrown');
+      //     border-bottom:1px solid theme-color("rosybrown");
       //     pointer-events:none;
       //     @include transition(width 0.3s ease-in-out);
       //   }
@@ -381,7 +384,7 @@ footer {
             position:relative;
             width:17px;
             font-size:1.2rem;
-            fill:theme-color('rosybrown')!important;
+            fill:theme-color("rosybrown")!important;
             z-index:21;
             @include transition(all ease-out 0.5s);
           }
@@ -392,7 +395,7 @@ footer {
             height:27px;
             top:-2.8px;//-2px
             left:-5px;
-            background-color:theme-color('rosybrown');
+            background-color:theme-color("rosybrown");
             z-index:20;
             @include border-radius(50%);
             @include filter(opacity(0));
@@ -445,7 +448,7 @@ footer {
         &:hover, &:active, &:focus {
           span {
             svg {
-              fill:theme-color('chocolate')!important;
+              fill:theme-color("chocolate")!important;
             }
             &::before {
               @include filter(opacity(1));
@@ -455,7 +458,10 @@ footer {
         }
       }
     }
-    .footer-hello {
+
+
+
+    .footer-availability {
       bottom:310px;
       left:37px;
       line-height:1.5;
@@ -466,6 +472,9 @@ footer {
       left:37px;
       text-align:left;
     }
+
+
+
     .footer-business-social {
       padding:0 7px 5px;
       bottom:95px;
@@ -508,13 +517,13 @@ footer {
             padding:0 0.1rem;
             font-family:$font-ultra-light;
             font-size:12px;
-            color:theme-color('rosybrown');
+            color:theme-color("rosybrown");
             //text-transform:uppercase;
             // &::before {
             //   display:none;
             // }
             &:hover, &:active, &:focus, &.active-link {
-              color:lighten(theme-color('rosybrown'),10);
+              color:lighten(theme-color("rosybrown"),10);
               @include transform(scale(1));
             }
             &.active-link {
@@ -535,16 +544,18 @@ footer {
       line-height:1.5;
       text-align:right;
     }
+
+
+
+
   }
 }
 @media only screen and (max-width:400px) {//Down
   footer {
-    aside.footer-info-elements {
-      .footer-hello, .footer-office, .footer-business-social, .footer-copyright, .footer-email-or-call, .footer-created-by, .footer-personal-social, nav.footer-nav, .footer-credits {
+    > aside.footer-aside-info-elements {
+      .footer-availability, .footer-office, .footer-business-social, .footer-copyright, .footer-email-or-call, .footer-created-by, .footer-personal-social, .footer-credits, nav.footer-nav {
         font-size:11px;
       }
     }
   }
 }
-
-

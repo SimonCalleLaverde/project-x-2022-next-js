@@ -18,21 +18,6 @@ import IconFacebook from "../components/icons/IconFacebook.js";
 export default function Footer() {
 	return (
 		<footer>{/*{styles.footer}*/}{/*className="clearfix"*/}
-
-
-
-      {/*<div className="container">
-        <span>
-          Designed & Developed by{" "}
-        </span>
-
-        <a href="https://simoncallelaverde.github.io/" target="_blank">
-          Simón Calle Laverde
-        </a>
-      </div>*/}
-
-
-
       {/* Desktop | Screen Readers */}
       <a className="container display-flex justify-content-center align-items-center text-center" href="/contact">{/*link-page-load*/}{/*href="javascript:delay('/hire_a_project')"*/}
         <div className="row-box">{/*row*/}
@@ -55,9 +40,9 @@ export default function Footer() {
 
       {/* Mobile Missing (.container) // To look up in my Jekyll's "Portfolio 2021" */}
 
-      <aside className="footer-info-elements text-rosybrown">
-        <div className="footer-hello">
-          <br/>Available for
+      <aside className="footer-aside-info-elements text-rosybrown">
+        <div className="footer-availability">
+          Available for
           <span className="font-ultra-light">
             <br/>Freelance projects /
             <br/>Contract work.
@@ -67,22 +52,23 @@ export default function Footer() {
         <div className="footer-office">
           Office
           <span className="font-ultra-light">
-            <br/>Calle 10 # 2 Este 40,
+            <br/>Calle 10 # 2 Este - 40,
             <br/>Tr 8 Apt 404, Chía,
             <br/>Cundinamarca,
             <br/>Colombia.
 
-            {/*<br/>Calle 152a # 13-58,
-            <br/>Las Acacias,
+            {/*<br/>Calle 152a # 13 - 58,
+            <br/>Tr 1 Apt 10-02, Las Acacias,
             <br/>Bogotá D.C,
             <br/>Colombia.*/}
           </span>
         </div>
 
+
+
+
         <div className="footer-business-social">
-          <span className="font-ultra-light">
-            Business Social Media
-          </span>
+          Business Social Media
           <div className="">{/*mt-1*/}
             {/* TO CREATE USING <LINK/> COMPONENT */}
             <a className="link-line-throught" href="https://www.linkedin.com/in/simoncallelaverde" target="_blank">{/*link*/}{/*mr-3*/}
@@ -114,13 +100,13 @@ export default function Footer() {
 
         {/* Desktop | Screen Readers */}
         <div className="footer-copyright font-ultra-light">
-          © {/* {{ "now" | date: "%Y" }} */}2022 Simón Calle Laverde{/*{{ site.url }}*/}
+          © {/*{{ "now" | date: "%Y" }}*/}2022 Simón Calle Laverde
           <br/>All rights reserved
         </div>
 
         {/* Mobile Missing (.footer-copyright) // To look up in my Jekyll's "Portfolio 2021" */}
 
-        {/*Desktop*/}
+        {/* Desktop */}
         <div className="footer-email-or-call">{/*d-none d-md-block*/}
           Or just email me or call me
           <span className="font-ultra-light">
@@ -129,7 +115,7 @@ export default function Footer() {
           </span>
         </div>
 
-        {/*Desktop | Screen Readers*/}
+        {/* Desktop | Screen Readers */}
         <div className="footer-created-by">{/*d-none d-md-block*/}
           Designed & developed by
           <span className="font-ultra-light">
@@ -137,7 +123,7 @@ export default function Footer() {
           </span>
         </div>
 
-        {/*Mobile Missing (.footer-created-by) // To look up in my Jekyll's "Portfolio 2021"*/}
+        {/* Mobile Missing (.footer-created-by) // To look up in my Jekyll's "Portfolio 2021" */}
 
         <div className="footer-personal-social">
           <span className="font-ultra-light">
@@ -222,7 +208,20 @@ export default function Footer() {
             </li>
           </ul>
         </nav>
+
+
+
+
       </aside>
+      {/*
+        <span>
+          Designed & Developed by{" "}
+        </span>
+
+        <a href="https://simoncallelaverde.github.io/" target="_blank">
+          Simón Calle Laverde
+        </a>
+      */}
 		</footer>
 	)
 };

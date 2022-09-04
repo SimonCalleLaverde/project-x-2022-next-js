@@ -101,19 +101,22 @@
 
   //----------------------------------Section Styles----------------------------------//
 
-  // REVISING
   // Footer
   footer {
-    aside.footer-info-elements {
+    > aside.footer-aside-info-elements {
 
 
 
-      .footer-hello {
+
+      .footer-availability {
         bottom:370px;
       }
       .footer-office {
         bottom:220px;
       }
+
+
+
       .footer-business-social {
         bottom:115px;//120px
       }
@@ -142,6 +145,7 @@
       .footer-credits {
         bottom:370px;
       }
+
 
 
 
