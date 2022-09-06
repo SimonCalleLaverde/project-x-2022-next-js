@@ -1,4 +1,4 @@
-// Missing To Implement "<Link/>" Component In Every "<a></a>"
+// MISSING TO IMPLEMENT "<LINK/>'S" COMPONENT IN EVERY "<a></a>" HERE
 
 // Imports
 import Link from "next/link";
@@ -17,7 +17,7 @@ import IconFacebook from "../components/icons/IconFacebook.js";
 // Footer (Sitewide) Component
 export default function Footer() {
 	return (
-		<footer>{/*{styles.footer}*/}{/*className="clearfix"*/}
+		<footer>{/*clearfix*/}
       {/* Desktop | Screen Readers */}
       <a className="container display-flex justify-content-center align-items-center text-center" href="/contact">{/*link-page-load*/}{/*href="javascript:delay('/hire_a_project')"*/}
         <div className="row-box">{/*row*/}
@@ -38,17 +38,28 @@ export default function Footer() {
         </div>
       </a>
 
-      {/* Mobile Missing (.container) // To look up in my Jekyll's "Portfolio 2021" */}
+      {/* Mobile (Missing (".container")) (To look up in my Jekyll's "Portfolio 2021") */}
 
       <aside className="footer-aside-info-elements text-rosybrown">
+        {/* Desktop | Screen Readers */}{/* (Mobile Hidden (I Think, Gotta Revise/Decide Mobile Yet)) */}
+        <div className="footer-email-or-call">{/*d-none d-md-block*/}
+          Or just email me or call me
+          <span className="font-ultra-light">
+            <br/>+(57) 310 558 2638{/*{{ site.phone_number }}*/}
+            <br/><a className="link-line-throught text-rosybrown" href="mailto:simoncallelaverde@gmail.com">simoncallelaverde@gmail.com</a>{/*{{ site.email }}*/}
+          </span>
+        </div>
+
+        {/* Desktop | Mobile | Screen Readers */}
         <div className="footer-availability">
           Available for
           <span className="font-ultra-light">
-            <br/>Freelance projects /
+            <br/>Freelance projects &/or
             <br/>Contract work.
           </span>
         </div>
 
+        {/* Desktop | Mobile | Screen Readers */}
         <div className="footer-office">
           Office
           <span className="font-ultra-light">
@@ -64,100 +75,8 @@ export default function Footer() {
           </span>
         </div>
 
-
-
-
-        <div className="footer-business-social">
-          Business Social Media
-          <div className="">{/*mt-1*/}
-            {/* TO CREATE USING <LINK/> COMPONENT */}
-            <a className="link-line-throught" href="https://www.linkedin.com/in/simoncallelaverde" target="_blank">{/*link*/}{/*mr-3*/}
-              <span className="icon-linkedin">
-                {/*{% include icon_linkedin.xml %}*/}
-                <IconLinkedIn/>
-              </span>
-            </a>
-            <a className="link-line-throught" href="https://www.behance.net/simoncallelaverde" target="_blank">{/*link*/}{/*mr-3*/}
-              <span className="icon-behance">
-                {/*{% include icon_behance.xml %}*/}
-                <IconBehance/>
-              </span>
-            </a>
-            <a className="link-line-throught" href="https://angel.co/u/simoncallelaverde" target="_blank">{/*link*/}{/*mr-3*/}
-              <span className="icon-angel">
-                {/*{% include icon_angel.xml %}*/}
-                <IconAngel/>
-              </span>
-            </a>
-            <a className="link-line-throught" href="https://github.com/SimonCalleLaverde" target="_blank">{/*link*/}
-              <span className="icon-github">
-                {/*{% include icon_github.xml %}*/}
-                <IconGithub/>
-              </span>
-            </a>
-          </div>
-        </div>
-
-        {/* Desktop | Screen Readers */}
-        <div className="footer-copyright font-ultra-light">
-          © {/*{{ "now" | date: "%Y" }}*/}2022 Simón Calle Laverde
-          <br/>All rights reserved
-        </div>
-
-        {/* Mobile Missing (.footer-copyright) // To look up in my Jekyll's "Portfolio 2021" */}
-
-        {/* Desktop */}
-        <div className="footer-email-or-call">{/*d-none d-md-block*/}
-          Or just email me or call me
-          <span className="font-ultra-light">
-            <br/>+(57) 310 558 2638{/*{{ site.phone_number }}*/}
-            <br/><a className="link-line-throught text-rosybrown" href="mailto:simoncallelaverde@gmail.com">simoncallelaverde@gmail.com</a>{/*{{ site.email }}*/}
-          </span>
-        </div>
-
-        {/* Desktop | Screen Readers */}
-        <div className="footer-created-by">{/*d-none d-md-block*/}
-          Designed & developed by
-          <span className="font-ultra-light">
-            <br/><a className="link-line-throught text-rosybrown" href="/">Simón Calle Laverde</a>{/*{{ site.client_name }}*/}
-          </span>
-        </div>
-
-        {/* Mobile Missing (.footer-created-by) // To look up in my Jekyll's "Portfolio 2021" */}
-
-        <div className="footer-personal-social">
-          <span className="font-ultra-light">
-            Personal Social Media
-          </span>
-          <div className="">{/*mt-1*/}
-            <a className="" href="https://dribbble.com/simoncallelaverde" target="_blank">{/*link*/}
-              <span className="icon-dribbble">
-                {/*{% include icon_dribbble.xml %}*/}
-                <IconDribbble/>
-              </span>
-            </a>
-            <a className="" href="https://co.pinterest.com/simoncallelaverde" target="_blank">{/*link*/}{/*ml-3*/}
-              <span className="icon-pinterest">
-                {/*{% include icon_pinterest.xml %}*/}
-                <IconPinterest/>
-              </span>
-            </a>
-            <a className="" href="https://www.instagram.com/simons_pic_tures/" target="_blank">{/*link*/}{/*ml-3*/}
-              <span className="icon-instagram">
-                {/*{% include icon_instagram.xml %}*/}
-                <IconInstagram/>
-              </span>
-            </a>
-            <a className="" href="https://www.facebook.com/simoncio/" target="_blank">{/*link*/}{/*ml-3*/}
-              <span className="icon-facebook">
-                {/*{% include icon_facebook.xml %}*/}
-                <IconFacebook/>
-              </span>
-            </a>
-          </div>
-        </div>
-
-        <div className="footer-credits">
+        {/* Desktop | Mobile */}{/* Screen Readers Hidden */}
+        <div className="footer-credits" aria-hidden="true">
           Credits
           <span className="font-ultra-light">
             <br/>Icon Illustrations by
@@ -165,10 +84,18 @@ export default function Footer() {
           </span>
         </div>
 
-        <nav className="footer-nav">{/*navbar*/}
+
+
+
+        {/*javascript:delay('/')*/}
+        {/*javascript:delay('/about')*/}
+        {/*javascript:delay('/projects')*/}
+        {/*javascript:delay('/contact_me')*/}
+        {/*javascript:delay('/hire_a_project')*/}
+        {/* Desktop | Mobile */}{/* Screen Readers Hidden */}
+        <nav className="footer-nav" aria-hidden="true">{/*navbar*/}
           <ul className="footer-nav-ul">{/*navbar-nav*/}
             <li className="footer-nav-li">{/*nav-item*/}
-              {/*javascript:delay('/')*/}
               {/*{% if page.slug == 'home' %} active-link{% endif %}*/}
               <a className="footer-nav-link link-line-throught" href="/">{/*nav-link*/}{/*link*/}{/*link-page-load*/}
                 <span>Home</span>
@@ -176,7 +103,6 @@ export default function Footer() {
             </li>
 
             <li className="footer-nav-li">{/*nav-item*/}
-              {/*javascript:delay('/about')*/}
               {/*{% if page.slug == 'about' %} active-link{% endif %}*/}
               <a className="footer-nav-link link-line-throught" href="/about">{/*nav-link*/}{/*link*/}{/*link-page-load*/}
                 <span>About{/* me*/}</span>
@@ -184,7 +110,6 @@ export default function Footer() {
             </li>
 
             <li className="footer-nav-li">{/*nav-item*/}
-              {/*javascript:delay('/projects')*/}
               {/*{% if page.slug == 'projects' %} active-link{% endif %}*/}
               <a className="footer-nav-link link-line-throught" href="/projects">{/*nav-link*/}{/*link*/}{/*link-page-load*/}
                 <span>All projects</span>
@@ -192,7 +117,6 @@ export default function Footer() {
             </li>
 
             <li className="footer-nav-li">{/*nav-item*/}
-              {/*javascript:delay('/contact_me')*/}
               {/*{% if page.slug == 'contact_me' %} active-link{% endif %} // if page.type_slug == 'feedback'*/}
               <a className="footer-nav-link link-line-throught" href="/contact">{/*nav-link*/}{/*link*/}{/*link-page-load*/}
                 <span>Contact{/* me*/}</span>
@@ -200,7 +124,6 @@ export default function Footer() {
             </li>
 
             <li className="footer-nav-li">{/*nav-item*/}
-              {/*javascript:delay('/hire_a_project')*/}
               {/*{% if page.slug == 'hire_a_project' %} active-link{% endif %}*/}
               <a className="footer-nav-link link-line-throught" href="/hire-a-project">{/*nav-link*/}{/*link*/}{/*link-page-load*/}
                 <span>Hire a project</span>
@@ -212,6 +135,92 @@ export default function Footer() {
 
 
 
+        {/* Desktop | Mobile | Screen Readers */}
+        <div className="footer-social-media-business">
+          <span className="font-ultra-light">
+            Business Social Media
+          </span>
+
+          <div className="mt-1">
+            <a className="mr-3" href="https://www.linkedin.com/in/simoncallelaverde" target="_blank">{/*link*/}{/*link-line-throught*/}
+              <span className="icon-linkedin">
+                {/*{% include icon_linkedin.xml %}*/}
+                <IconLinkedIn/>
+              </span>
+            </a>
+            <a className="mr-3" href="https://www.behance.net/simoncallelaverde" target="_blank">{/*link*/}{/*link-line-throught*/}
+              <span className="icon-behance">
+                {/*{% include icon_behance.xml %}*/}
+                <IconBehance/>
+              </span>
+            </a>
+            <a className="mr-3" href="https://angel.co/u/simoncallelaverde" target="_blank">{/*link*/}{/*link-line-throught*/}
+              <span className="icon-angel">
+                {/*{% include icon_angel.xml %}*/}
+                <IconAngel/>
+              </span>
+            </a>
+            <a className="" href="https://github.com/SimonCalleLaverde" target="_blank">{/*link*/}{/*link-line-throught*/}
+              <span className="icon-github">
+                {/*{% include icon_github.xml %}*/}
+                <IconGithub/>
+              </span>
+            </a>
+          </div>
+        </div>
+
+        {/* Desktop | Mobile | Screen Readers */}
+        <div className="footer-social-media-personal">
+          <span className="font-ultra-light">
+            Personal Social Media
+          </span>
+
+          <div className="mt-1">
+            <a className="" href="https://dribbble.com/simoncallelaverde" target="_blank">{/*link*/}
+              <span className="icon-dribbble">
+                {/*{% include icon_dribbble.xml %}*/}
+                <IconDribbble/>
+              </span>
+            </a>
+            <a className="ml-3" href="https://co.pinterest.com/simoncallelaverde" target="_blank">{/*link*/}
+              <span className="icon-pinterest">
+                {/*{% include icon_pinterest.xml %}*/}
+                <IconPinterest/>
+              </span>
+            </a>
+            <a className="ml-3" href="https://www.instagram.com/simons_pic_tures/" target="_blank">{/*link*/}
+              <span className="icon-instagram">
+                {/*{% include icon_instagram.xml %}*/}
+                <IconInstagram/>
+              </span>
+            </a>
+            <a className="ml-3" href="https://www.facebook.com/simoncio/" target="_blank">{/*link*/}
+              <span className="icon-facebook">
+                {/*{% include icon_facebook.xml %}*/}
+                <IconFacebook/>
+              </span>
+            </a>
+          </div>
+        </div>
+
+
+
+
+        {/* Desktop | Screen Readers */}
+        <div className="footer-copyright font-ultra-light">
+          © {/*{{ "now" | date: "%Y" }}*/}2022 Simón Calle Laverde
+          <br/>All rights reserved
+        </div>
+
+        {/* Mobile (Missing (".footer-copyright")) (To look up in my Jekyll's "Portfolio 2021") */}
+
+        {/* Desktop | Screen Readers */}{/* (Mobile Hidden (I Think, Gotta Revise/Decide Mobile Yet)) */}
+        <div className="footer-created-by">{/*d-none d-md-block*/}
+          Designed & developed by
+          <br/><a className="link-line-throught font-ultra-light text-rosybrown" href="/">Simón Calle Laverde</a>{/*{{ site.client_name }}*/}
+        </div>
+
+        {/* Mobile (Missing (".footer-created-by")) (To look up in my Jekyll's "Portfolio 2021") */}
       </aside>
       {/*
         <span>

@@ -104,36 +104,18 @@
   // Footer
   footer {
     > aside.footer-aside-info-elements {
-
-
-
-
-      .footer-availability {
+      .footer-availability, .footer-credits {
         bottom:370px;
       }
-      .footer-office {
+      .footer-office, nav.footer-nav {
         bottom:220px;
       }
 
 
 
-      .footer-business-social {
-        bottom:115px;//120px
-      }
-      .footer-copyright {
-        bottom:30px;
-      }
-      .footer-email-or-call {
-        bottom:30px;
-      }
-      .footer-created-by {
-        bottom:30px;
-      }
-      .footer-personal-social {
-        bottom:115px;//120px
-      }
+
       nav.footer-nav {//.navbar
-        bottom:220px;//228px
+        //bottom:220px;//228px
         ul.footer-nav-ul {//navbar-nav
           li.footer-nav-li {//nav-item
             a.footer-nav-link {//nav-link
@@ -142,13 +124,13 @@
           }
         }
       }
-      .footer-credits {
-        bottom:370px;
+
+
+
+
+      .footer-social-media-business, .footer-social-media-personal {
+        bottom:115px;//120px
       }
-
-
-
-
     }
   }
 
