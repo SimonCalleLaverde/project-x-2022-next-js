@@ -161,7 +161,7 @@ h1, h2, h3, h4, h5, h6 {
 
 // Website Colours
 .text-rosybrown {
-  color:lighten(theme-color("rosybrown"),10)!important;
+  color:theme-color("rosybrown")!important;//lighten(theme-color("rosybrown"),10)!important;
 }
 
 // Link Override Styles
@@ -251,11 +251,19 @@ button, a.button {
   background-color:rgba(105,169,179,0.7);
 }
 
-// Container (¿? | To Revise/Check A 'Layout' Component To Wrap Everything | ¿To Use Bootstrap? Let's See)
-.container {//Temporary
+//----------------------------------Layout Styles----------------------------------//
+
+// (To Revise/Check A 'Layout' Component To Wrap Everything | Or ¿To Use React-Bootstrap? ¿To Use Reactstrap? ¿To Use Material-UI? Let's See)
+// Container
+.container {//Might Be Temporary
+  width:100%;//Temporary, As Per B4
   //max-width:...;
-  padding:0 2rem;
+  margin-right:auto;//Temporary, As Per B4
+  margin-left:auto;//Temporary, As Per B4
+  padding-right:15px;//Temporary, As Per B4
+  padding-left:15px;//Temporary, As Per B4
 }
+// Other Media Queries
 
 //----------------------------------Form Styles----------------------------------//
 
@@ -325,6 +333,13 @@ section {
 footer {
   //flex:1;
   margin:0;
+
+
+
+  background-color:theme-color("chocolate");////Temporary (To see styles better, line-through, dark-mode)
+
+
+
   > .container {//Desktop & Mobile
     min-height:100vh;
     > div {
@@ -367,16 +382,35 @@ footer {
       right:37px;
       text-align:right;
     }
-
-
-
-
     nav.footer-nav {//.navbar
       padding:0;
       top:auto;
       bottom:188px;
       line-height:1.5!important;
+
+
+
+      li {//Temporary As Per B4
+        display: list-item;//Temporary As Per B4
+        text-align: -webkit-match-parent;//Temporary As Per B4
+      }
+      //pointer-events: none;////I had it as "general" above before, for various elements
+      ol, ul, dl {//Temporary As Per B4
+        margin-top: 0;//Temporary As Per B4
+        margin-bottom: 1rem;//Temporary As Per B4
+      }
       ul.footer-nav-ul {//navbar-nav
+
+
+
+        display: flex;//Temporary As Per B4
+        flex-direction: column;//Temporary As Per B4
+        padding-left: 0;//Temporary As Per B4
+        margin-bottom: 0;//Temporary As Per B4
+        list-style: none;//Temporary As Per B4
+
+
+
         li.footer-nav-li {//nav-item
           a.footer-nav-link {//nav-link
             display:inline-block;
@@ -403,6 +437,9 @@ footer {
             }
           }
         }
+
+
+
       }
     }
 

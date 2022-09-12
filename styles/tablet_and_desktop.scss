@@ -99,6 +99,19 @@
     }
   }
 
+  //----------------------------------Layout Styles----------------------------------//
+
+  // Container
+  .container {
+    //max-width:...;
+  }
+  // Other Media Queries
+  @media only screen and (min-width:1200px) {//Up
+    .container {
+      max-width:988px;//Temporary, As Per B4
+    }
+  }//@Media
+
   //----------------------------------Section Styles----------------------------------//
 
   // Footer
@@ -110,26 +123,8 @@
       .footer-office, nav.footer-nav {
         bottom:220px;
       }
-
-
-
-
-      nav.footer-nav {//.navbar
-        //bottom:220px;//228px
-        ul.footer-nav-ul {//navbar-nav
-          li.footer-nav-li {//nav-item
-            a.footer-nav-link {//nav-link
-              text-transform:none;
-            }
-          }
-        }
-      }
-
-
-
-
       .footer-social-media-business, .footer-social-media-personal {
-        bottom:115px;//120px
+        bottom:115px;
       }
     }
   }

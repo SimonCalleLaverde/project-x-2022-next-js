@@ -54,7 +54,7 @@ export default function Footer() {
         <div className="footer-availability">
           Available for
           <span className="font-ultra-light">
-            <br/>Freelance projects &/or
+            <br/>Freelance projects /
             <br/>Contract work.
           </span>
         </div>
@@ -84,9 +84,7 @@ export default function Footer() {
           </span>
         </div>
 
-
-
-
+        {/* WAS (FOR DELAYED PAGE TRANSITIONS, MUST LOOK AFTER TO DO SAME BUT WITH REACT (ONE PAGE APP)) */}
         {/*javascript:delay('/')*/}
         {/*javascript:delay('/about')*/}
         {/*javascript:delay('/projects')*/}
@@ -94,6 +92,9 @@ export default function Footer() {
         {/*javascript:delay('/hire_a_project')*/}
         {/* Desktop | Mobile */}{/* Screen Readers Hidden */}
         <nav className="footer-nav" aria-hidden="true">{/*navbar*/}
+
+
+
           <ul className="footer-nav-ul">{/*navbar-nav*/}
             <li className="footer-nav-li">{/*nav-item*/}
               {/*{% if page.slug == 'home' %} active-link{% endif %}*/}
@@ -130,6 +131,9 @@ export default function Footer() {
               </a>
             </li>
           </ul>
+
+
+
         </nav>
 
 
@@ -168,6 +172,9 @@ export default function Footer() {
             </a>
           </div>
         </div>
+
+
+
 
         {/* Desktop | Mobile | Screen Readers */}
         <div className="footer-social-media-personal">
