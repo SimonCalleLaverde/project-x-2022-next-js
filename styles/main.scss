@@ -1,29 +1,29 @@
 // WILL RENDER ALL STYLES AS "<style></style>" WITHIN THE "<head></head>"
 
-//----------------------------------Brand Colours----------------------------------//
+//----------------------------------Brand Colors Variables----------------------------------//
 
-// Black & White Colours
+// Black & White Colors
 $theme-color-black:#000000;
 $theme-color-white:#FFFFFF;
 
-// Grey Colours
+// Grey Colors
 $theme-color-grey-dark:#1A1A1A;//Grey Dark //rgba(26,26,26,1)
 $theme-color-grey-mid:darken(#CCC,5);//Grey Mid //(Logo's Hover Effect (ContactPage))
 $theme-color-grey-light:#FEFEFE;//Grey Light //rgba(254,254,254,1)
 
-// Brand Colours
+// Brand Colors
 $theme-color-beige:lighten(#B89C92,4);//Beige-Background/Beige-Contrast
 $theme-color-chocolate:#231F20;//Chocolate-Contrast/Chocolate-Background
 $theme-color-rosybrown:lighten(#FFE8E4,1);//Rosybrown Texts
 
-// Website's Complementary Colours
+// Website's Complementary Colors
 $theme-color-aqua:#004743;//Aqua //(Logo's Hover Effect (HomePage))
 $theme-color-blue:#69A9B3;//Blue //(Logo's Hover Effect (AboutPage)) (Text Selection Styles)
 $theme-color-cherry:#CE1352;//Cherry //(Logo's Hover Effect (ProjectsPage)) (Hire Button (Old/Removed))
 $theme-color-azalea:rgba(248,198,198,1);//Azalea //(Logo's Hover Effect (HireAProjectPage))
 $theme-color-redish:#B36F68;//Redish //(Footer's Hover Cursor Circle)
 
-// Third Party Companies Brand Colours (https://brandcolors.net/)
+// Third Party Companies' Brand Colors (https://brandcolors.net/)
 $theme-color-facebook:#3B5998;//Facebook Official
 $theme-color-instagram:#E1306C;//Instagram Official
 $theme-color-whatsapp:#075E54;//WhatsApp Official
@@ -34,9 +34,9 @@ $theme-color-behance:#1769FF;//Behance Official
 $theme-color-pinterest:#BD081C;//Pinterest Official
 $theme-color-google-plus:#DD4B39;//Google Plus Official
 
-//----------------------------------Mapping Colours----------------------------------//
+//----------------------------------Theme Colors Map----------------------------------//
 
-// https://brandcolors.net/
+// Mapping Colors
 $theme-colors: (
   "black":$theme-color-black,
   "white":$theme-color-white,

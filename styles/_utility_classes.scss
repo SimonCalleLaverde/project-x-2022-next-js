@@ -1,6 +1,20 @@
 //----------------------------------Utility Classes Styles----------------------------------//
 
-// General
+// Display
+.display-block {
+  display:block;
+}
+.display-inline-block {
+  display:inline-block;
+}
+.display-none {
+  display:none;
+}
+
+// Position
+.position-static {
+  position:static;
+}
 .position-relative {
   position:relative;
 }
@@ -10,12 +24,8 @@
 .position-fixed {
   position:fixed;
 }
-.display-block {
-  display:block;
-}
-.display-inline-block {
-  display:inline-block;
-}
+
+// Font Weight
 .text-lighter {
   font-weight:lighter;
 }
@@ -43,32 +53,38 @@
 .text-bold {
   font-weight:bold;
 }
+
+// Text Transform
 .text-transform-none {
   text-transform:none;
 }
-.text-underline {
-  text-decoration:underline;
-}
-.text-uppercase {
+.text-transform-uppercase {
   text-transform:uppercase;
 }
-.text-lowercase {
+.text-transform-lowercase {
   text-transform:lowercase;
 }
-.text-capitalize {
+.text-transform-capitalize {
   text-transform:capitalize;
 }
-.text-center {
+
+// Text Decoration
+.text-decoration-underline {
+  text-decoration:underline;
+}
+
+// Text Align
+.text-align-center {
   text-align:center;
 }
-.text-right {
+.text-align-right {
   text-align:right;
 }
-.text-left {
+.text-align-left {
   text-align:left;
 }
 
-// Flexbox (Better Support) (Still Missing)
+// Flexbox (Better Support) (STILL MISSING SUPPORT, CLASSES, & RE-CHECK)
 .display-flex {
   display:-webkit-box;
   display:-ms-flexbox;

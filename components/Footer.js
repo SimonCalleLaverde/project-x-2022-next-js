@@ -19,11 +19,11 @@ export default function Footer() {
 	return (
 		<footer>{/*clearfix*/}
       {/* Desktop | Screen Readers */}
-      <a className="container display-flex justify-content-center align-items-center text-center" href="/contact">{/*link-page-load*/}{/*href="javascript:delay('/hire_a_project')"*/}
+      <a className="container display-flex justify-content-center align-items-center text-align-center" href="/contact">{/*link-page-load*/}{/*href="javascript:delay('/hire_a_project')"*/}
         <div className="row-box">{/*row*/}
           <div className="column-12">{/*col-md-12*/}
 
-            <h3 className="text-huge text-rosybrown text-uppercase">{/*mb-0*/}
+            <h3 className="text-huge text-rosybrown text-transform-uppercase">{/*mb-0*/}
               Let's create
               <br/>something
               <br/>special
