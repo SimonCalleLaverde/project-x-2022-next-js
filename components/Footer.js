@@ -136,9 +136,6 @@ export default function Footer() {
 
         </nav>
 
-
-
-
         {/* Desktop | Mobile | Screen Readers */}
         <div className="footer-social-media-business">
           <span className="font-ultra-light">
@@ -146,6 +143,9 @@ export default function Footer() {
           </span>
 
           <div className="mt-1">
+
+
+
             <a className="mr-3" href="https://www.linkedin.com/in/simoncallelaverde" target="_blank">{/*link*/}{/*link-line-throught*/}
               <span className="icon-linkedin">
                 {/*{% include icon_linkedin.xml %}*/}
@@ -170,11 +170,11 @@ export default function Footer() {
                 <IconGithub/>
               </span>
             </a>
+
+
+
           </div>
         </div>
-
-
-
 
         {/* Desktop | Mobile | Screen Readers */}
         <div className="footer-social-media-personal">
@@ -183,6 +183,9 @@ export default function Footer() {
           </span>
 
           <div className="mt-1">
+
+
+
             <a className="" href="https://dribbble.com/simoncallelaverde" target="_blank">{/*link*/}
               <span className="icon-dribbble">
                 {/*{% include icon_dribbble.xml %}*/}
@@ -207,11 +210,11 @@ export default function Footer() {
                 <IconFacebook/>
               </span>
             </a>
+
+
+
           </div>
         </div>
-
-
-
 
         {/* Desktop | Screen Readers */}
         <div className="footer-copyright font-ultra-light">

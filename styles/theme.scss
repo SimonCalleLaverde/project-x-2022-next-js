@@ -1,25 +1,54 @@
 //----------------------------------General Styles----------------------------------//
 
 // General
-* {
-  margin:0;
-  padding:0;
+*, *::before, *::after {//As Per B4
+  //margin:0;
+  //padding:0;
   box-sizing:border-box;
 }
 // NextJS Original Fonts
 // html, body {
 //   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 // }
+html, body {
+  margin:0;//As Per B4
+  padding:0;//As Per B4
+}
+html ::-webkit-scrollbar {//As Per B4
+  display:none;
+}
 html {
   //background-color:theme-color("beige");
   text-rendering:optimizeLegibility;//geometricPrecision
   font-smooth:always;
   -webkit-font-smoothing:subpixel-antialiased;//antialiased
   -moz-osx-font-smoothing:grayscale;
+
+
+
+  -webkit-text-size-adjust:100%;//As Per B4
+  -webkit-tap-highlight-color:transparent;//As Per B4
+
+
+
 }
 body {
+
+
+
+  position:relative;//As Per B4
+
+
+
   min-height:100vh;
   font-family:$font-light;
+
+
+
+  font-weight:400;//Temporary As Per B4
+
+
+
   font-size:15px;//17px
   background-color:theme-color("beige");
   color:theme-color("grey-dark");
@@ -358,7 +387,7 @@ footer {
       font-size:12px;
     }
     .footer-email-or-call, .footer-copyright, .footer-created-by {
-      bottom:30px;
+      bottom:30.5px;//To be 30px
     }
     .footer-email-or-call {
       left:50%;
@@ -397,6 +426,9 @@ footer {
         margin-top: 0;//Temporary As Per B4
         margin-bottom: 1rem;//Temporary As Per B4
       }
+
+
+
       ul.footer-nav-ul {//navbar-nav
 
 

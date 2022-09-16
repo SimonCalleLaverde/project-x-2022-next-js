@@ -118,13 +118,16 @@
   footer {
     > aside.footer-aside-info-elements {
       .footer-availability, .footer-credits {
-        bottom:370px;
+        bottom:370.5px;//To be 370px
       }
       .footer-office, nav.footer-nav {
-        bottom:220px;
+        bottom:220.5px;//To be 220px
       }
       .footer-social-media-business, .footer-social-media-personal {
-        bottom:115px;
+        bottom:115px;//To be 115px
+      }
+      .footer-social-media-personal {//To mix above
+        bottom:115.5px;//To be 115px and mixed above again
       }
     }
   }
