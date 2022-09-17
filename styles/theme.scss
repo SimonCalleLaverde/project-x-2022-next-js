@@ -23,32 +23,14 @@ html {
   font-smooth:always;
   -webkit-font-smoothing:subpixel-antialiased;//antialiased
   -moz-osx-font-smoothing:grayscale;
-
-
-
   -webkit-text-size-adjust:100%;//As Per B4
   -webkit-tap-highlight-color:transparent;//As Per B4
-
-
-
 }
 body {
-
-
-
   position:relative;//As Per B4
-
-
-
   min-height:100vh;
   font-family:$font-light;
-
-
-
   font-weight:400;//Temporary As Per B4
-
-
-
   font-size:15px;//17px
   background-color:theme-color("beige");
   color:theme-color("grey-dark");
@@ -194,7 +176,8 @@ h1, h2, h3, h4, h5, h6 {
 // Link Override Styles
 a {
   color:lighten(theme-color("rosybrown"),10);
-  text-decoration:none;////New
+  background-color:transparent;//As Per B4
+  text-decoration:none;//As Per B4
   @include transition(all ease 0.5s);//ease-out
   &:hover, &:active, &:focus {
     color:lighten(theme-color("rosybrown"),20);
@@ -234,6 +217,7 @@ a {
 
 
 
+
 // Link Line Throught
 a.link-line-throught {
   position:relative;
@@ -264,6 +248,7 @@ a.link-line-throught {
 
 
 
+
 // Buttons
 button, a.button {
   cursor:pointer;
@@ -290,7 +275,7 @@ button, a.button {
   padding-right:15px;//Temporary, As Per B4
   padding-left:15px;//Temporary, As Per B4
 }
-// Other Media Queries
+//// Other Media Queries
 
 //----------------------------------Form Styles----------------------------------//
 
@@ -338,10 +323,8 @@ header {
   //flex:1;
   min-height:100vh;
   padding:4rem 0;//Temporary
-  h1, h2, h3, h4, h5, h6 {//Temporary
-    &.headline {//.title
-      margin:0;
-    }
+  .headline {//.title//Temporary
+    margin:0;
   }
 }
 
@@ -354,12 +337,13 @@ main {
 
 // Section
 section {
+  min-height:40vh;//Temporary
 }
 
 // Footer
 footer {
   //flex:1;
-  margin:0;
+  margin:0;////Was to reset in B4
 
 
 
@@ -372,7 +356,7 @@ footer {
     > div {
       pointer-events:none;//From "row", To All Elements Inside <a>
       h1, h2, h3, h4, h5, h6 {
-        margin-bottom:0;////New
+        margin-bottom:0;////New//Temporary
       }
       p {
         font-size:23px;
@@ -472,37 +456,47 @@ footer {
 
       }
     }
-
-
-
-
+    .footer-social-media-business {
+      a {
+        padding-right:3.7px;//New
+        > span {
+          &::before {
+            top:-3.1px;//Was -2.8px
+          }
+        }
+      }
+    }
+    .footer-social-media-personal {
+      a {
+        padding-left:3.7px;//New
+        > span {
+          &::before {
+            top:-3px;//Was -2.8px
+          }
+        }
+      }
+    }
     .footer-social-media-business, .footer-social-media-personal {
       padding:0 7px 5px;
       bottom:95px;
       overflow:hidden;
       a {
-        &::before {
-          display:none;
-        }
+        // &::before {
+        //   display:none;
+        // }
         > span {
           position:relative;
           font-size:15.5px;
           //pointer-events:none;
-          > svg {
-            position:relative;
-            width:17px;
-            font-size:1.2rem;
-            fill:theme-color("rosybrown")!important;
-            z-index:21;
-            @include transition(all ease-out 0.5s);
-          }
           &::before {
             content:'';
             position:absolute;
             width:27px;
             height:27px;
-            top:-2.8px;//-2px
-            left:-5px;
+
+            //top:-3.1px;//Was -2.8px
+            left:-5px;//To be -6px for most centering all icons, for now matching old site exactly
+
             background-color:theme-color("rosybrown");
             z-index:20;
             @include border-radius(50%);
@@ -511,47 +505,64 @@ footer {
             //@include transform-origin(center bottom);
             @include transition(filter ease-out 0.4s, transform ease-out 0.4s);
           }
-          &.icon-linkedin {
-            svg {
+          > svg {
+            position:relative;
+            width:17px;
+            //font-size:1.2rem;//To remove
+            fill:theme-color("rosybrown");
+            z-index:21;
+            @include transition(fill ease-out 0.5s);//all
+          }
+          &.icon-linkedin {//√
+            > svg {
               width:14px;
-              margin-top:-1px;
-              margin-left:2px;
+              top:1.8px;//Was "margin-top:-1px"
+              margin-left:2px;//Affects the others too
             }
           }
-          &.icon-behance {
-            svg {
+          &.icon-behance {//√
+            > svg {
               width:18px;
+              top:4.4px;//New
             }
           }
-          &.icon-angel {
-            svg {
+          &.icon-angel {//√
+            > svg {
               width:14px;
-              margin-left:1px;
+              top:5.5px;//New
+              margin-left:1px;//Was "margin-left:1px"//Affects githubs too//To remove, for now matching old site
             }
           }
-          &.icon-facebook {
-            svg {
+          &.icon-github {//√
+            > svg {
+              top:3.8px;//New
+            }
+          }
+          &.icon-dribbble, &.icon-pinterest, &.icon-instagram {//√//√//√
+            > svg {
+              top:4.3px;//New
+            }
+          }
+          &.icon-facebook {//√
+            > svg {
               width:15px;
+              top:3.2px;//New
             }
           }
         }
         &:hover, &:active, &:focus {
           span {
-            svg {
-              fill:theme-color("chocolate")!important;
-            }
             &::before {
               @include filter(opacity(1));
               @include transform(translateY(0));
+            }
+            svg {
+              fill:theme-color("chocolate");
             }
           }
         }
       }
     }
-
-
-
-
     .footer-social-media-business {
       left:30px;//37px
     }
