@@ -93,6 +93,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 .text-intro, .text-huge {
   font-size:2.85rem;
+
+  font-weight:500;//New
+
 }
 .text-intro {
   line-height:1.19;
@@ -356,9 +359,11 @@ footer {
     > div {
       pointer-events:none;//From "row", To All Elements Inside <a>
       h1, h2, h3, h4, h5, h6 {
-        margin-bottom:0;////New//Temporary
+        margin-top:0;//New//Temporary
+        margin-bottom:0;//New//Temporary
       }
       p {
+        margin-top:0;//New//Temporary
         font-size:23px;
         line-height:1.2;
       }
@@ -471,7 +476,7 @@ footer {
         padding-left:3.7px;//New
         > span {
           &::before {
-            top:-3px;//Was -2.8px
+            top:-2.9px;//Was -2.8px
           }
         }
       }
