@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "../styles/HomePage.module.scss";//I'm Modifying
 import { GraphQLClient, gql } from "graphql-request";
-import ProjectCard from "../components/homepage/ProjectCard";
+import ProjectCard from "../components/homepage/ProjectCard.js";
 import Header from "../components/homepage/Header.js";
 import Footer from "../components/Footer.js";
 
