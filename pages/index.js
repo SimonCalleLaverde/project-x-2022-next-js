@@ -2,11 +2,12 @@
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
-import styles from "../styles/HomePage.module.scss";//I'm Modifying
-import { GraphQLClient, gql } from "graphql-request";
-import ProjectCard from "../components/homepage/ProjectCard.js";
 import Header from "../components/homepage/Header.js";
 import Footer from "../components/Footer.js";
+//import styles from "../styles/HomePage.module.scss";//I'm Modifying//To Be Deleted
+
+import { GraphQLClient, gql } from "graphql-request";
+import ProjectCard from "../components/homepage/ProjectCard.js";
 
 //----------------------------------THIS PART BELOW IS FETCHING CONTENT USING GRAPHCMS [START]----------------------------------//
 

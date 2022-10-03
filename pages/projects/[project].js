@@ -14,7 +14,7 @@ export default function ProjectPage({ car }) {//Destructuring "car" prop to use 
 
 	return (
 		<>
-			{/* <Head/> builds lots of crap already like "<meta charset='utf-8'>", "<meta name='viewport' content='width=device-width'>", some "<script></script>", "<noscript></noscript>", "<style></style>", and so. So to be careful for not repeated stuff */}
+			{/* <Head/> builds lots of stuff already like "<meta charset='utf-8'>", "<meta name='viewport' content='width=device-width'>", some "<script></script>", "<noscript></noscript>", "<style></style>", and so. So to be careful for not repeated stuff */}
 			<Head>
 				<title>{car.color} {car.id}</title>
 				{/* To add meta-tags, etc */}

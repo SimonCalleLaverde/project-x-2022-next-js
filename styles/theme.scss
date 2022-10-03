@@ -275,6 +275,7 @@ button, a.button {
   //max-width:...;
   margin-right:auto;//Temporary, As Per B4
   margin-left:auto;//Temporary, As Per B4
+  //padding:0 2rem;//Was Starting With NextJS
   padding-right:15px;//Temporary, As Per B4
   padding-left:15px;//Temporary, As Per B4
 }
@@ -333,6 +334,11 @@ header {
 
 // Main
 main {
+  //display:flex;//Was Starting With NextJS
+  //flex:1;//Was Starting With NextJS
+  //flex-direction:column;//Was Starting With NextJS
+  //justify-content:center;//Was Starting With NextJS
+  //align-items:center;//Was Starting With NextJS
   min-height:80vh;//Temporary
   border-top:1px solid theme-color("grey-dark");//Temporary
   border-bottom:1px solid theme-color("grey-dark");//Temporary
@@ -345,8 +351,11 @@ section {
 
 // Footer
 footer {
-  //flex:1;
-  margin:0;////Was to reset in B4
+  display:flex;//Was Starting With NextJS
+  flex:1;//Was Starting With NextJS
+  justify-content:center;//Was Starting With NextJS
+  align-items:center;//Was Starting With NextJS
+  margin:0;////Was To Reset In B4
 
 
 
@@ -355,6 +364,7 @@ footer {
 
 
   > .container {//Desktop & Mobile
+    //flex-grow:1;//Was Starting With NextJS
     min-height:100vh;
     > div {
       pointer-events:none;//From "row", To All Elements Inside <a>
