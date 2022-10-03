@@ -5,6 +5,9 @@ import Image from "next/image";
 import Header from "../components/projects/Header.js";
 import Footer from "../components/Footer.js";
 
+
+
+
 // Projects (Page) Component
 export default function ProjectsPage() {
 	return (

@@ -5,6 +5,9 @@ import Image from "next/image";
 import Header from "../components/blog/Header.js";
 import Footer from "../components/Footer.js";
 
+
+
+
 // TEMPORARY
 const blogPostsArray = ["blog-post-1", "blog-post-2", "blog-post-3"]//"http://localhost:3000/blog_posts.json"
 

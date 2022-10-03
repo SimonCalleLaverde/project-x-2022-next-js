@@ -14,9 +14,6 @@ html, body {
   margin:0;//As Per B4
   padding:0;//As Per B4
 }
-html ::-webkit-scrollbar {//As Per B4
-  display:none;
-}
 html {
   //background-color:theme-color("beige");
   text-rendering:optimizeLegibility;//geometricPrecision
@@ -25,6 +22,9 @@ html {
   -moz-osx-font-smoothing:grayscale;
   -webkit-text-size-adjust:100%;//As Per B4
   -webkit-tap-highlight-color:transparent;//As Per B4
+  ::-webkit-scrollbar {//As Per B4
+    display:none;//As Per B4
+  }
 }
 body {
   position:relative;//As Per B4
@@ -279,7 +279,22 @@ button, a.button {
   padding-right:15px;//Temporary, As Per B4
   padding-left:15px;//Temporary, As Per B4
 }
-//// Other Media Queries
+//// Other Media Queries Here
+
+// Grid
+.grid {//To Consider//Was Starting With NextJS
+  display:flex;//Was Starting With NextJS
+  align-items:center;//Was Starting With NextJS
+  justify-content:center;//Was Starting With NextJS
+  flex-wrap:wrap;//Was Starting With NextJS
+  max-width:800px;//Was Starting With NextJS
+}
+@media (max-width:600px) {//Down//Was Starting With NextJS
+  .grid {//To Consider//Was Starting With NextJS
+    width:100%;//Was Starting With NextJS
+    flex-direction:column;//Was Starting With NextJS
+  }
+}
 
 //----------------------------------Form Styles----------------------------------//
 

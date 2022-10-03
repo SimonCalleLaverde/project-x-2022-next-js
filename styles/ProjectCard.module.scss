@@ -1,3 +1,5 @@
+// TO REVISE/DELETE
+
 // FILE WAS BASED ON MY "next-js-blog-graphcms", NOW VERY CHANGED, TO START WITH
 
 // Mixins Styles
@@ -7,8 +9,10 @@
 .article {
   margin:4rem 2rem;
   padding:2rem;
-  border:1px dotted #000;
-  border-radius:0.5rem;
+  border:1px dotted #000;//#eaeaea
+  @include border-radius(0.5rem);
+  //text-align:left;//Was Starting With NextJS
+  @include transition(color 0.15s ease, border-color 0.15s ease);//Was Starting With NextJS
   > img {
     max-width:500px;
     cursor:pointer;
@@ -28,10 +32,14 @@
       }
     }
   }
+  &:hover, &:focus, &:active {
+    color:purple;//#0070f3//Was Starting With NextJS
+    border-color:purple;//#0070f3//Was Starting With NextJS
+  }
 }
 
 // TEMPORARY
-@media screen and (max-width: 768px) {
+@media screen and (max-width:768px) {//Down
   .article {
     margin:3rem 1rem;
     padding:1rem;
