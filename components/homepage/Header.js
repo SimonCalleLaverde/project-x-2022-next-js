@@ -1,6 +1,6 @@
 // Imports
 
-// Header (Homepage) Component
+// Header (HomePage) Component
 export default function Footer() {
   return (
     <header className="display-flex justify-content-center align-items-center text-align-center">{/*flex-direction-row*/}

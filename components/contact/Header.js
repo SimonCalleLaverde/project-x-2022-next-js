@@ -1,6 +1,6 @@
 // Imports
 
-// Header (Contact) Component
+// Header (ContactPage) Component
 export default function Footer() {
 	return (
     <header className="display-flex justify-content-center align-items-center text-align-center">{/*flex-direction-row*/}

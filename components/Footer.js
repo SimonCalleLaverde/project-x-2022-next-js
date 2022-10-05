@@ -1,4 +1,4 @@
-// MISSING TO IMPLEMENT "<LINK/>'S" COMPONENT IN EVERY "<a></a>" HERE
+// MISSING TO IMPLEMENT "<LINK/>'S" COMPONENT IN EVERY FOOTER NAV'S "<a></a>" HERE
 
 // Imports
 import Link from "next/link";
