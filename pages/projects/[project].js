@@ -1,4 +1,4 @@
-// T O   B A S E   I N   "blog/[blogPost].js"
+// T O   B A S E   I N   "pages/blog/[blogPost].js"   O R   "stuff/[[SLUG]].js"
 // Dynamic Route Result: "/projects/[project]" (E.g: "/projects/lambo", "/projects/tesla", "/projects/ford")
 
 // Imports

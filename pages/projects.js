@@ -77,28 +77,23 @@ export default function ProjectsPage({ allProjects }) {
 
 
 
-  					<strong>Cars List (Temporary) 🚗 🚙</strong>
+            <div>
+              <Link href="/projects/tesla">
+                Tesla Car
+              </Link>
+            </div>
 
-  					{/* List will be generated dynamically by maping an array of data (JSON files temporary, later GraphCMS) into JSX elements */}
-  					<ul>
-  						<li>
-  							<Link href="/projects/tesla">
-  								Tesla Car
-  							</Link>
-  						</li>
+            <div>
+              <Link href="/projects/ford">
+                Ford Car
+              </Link>
+            </div>
 
-  						<li>
-  							<Link href="/projects/ford">
-  								Ford Car
-  							</Link>
-  						</li>
-
-  						<li>
-  							<Link href="/projects/lambo">
-  								Lambo Car
-  							</Link>
-  						</li>
-  					</ul>
+            <div>
+              <Link href="/projects/lambo">
+                Lambo Car
+              </Link>
+            </div>
 
 
 

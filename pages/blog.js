@@ -77,18 +77,13 @@ export default function BlogPage({ allProjects }) {
 
 
 
-  					<strong>Articles List (Temporary)</strong>
-
-  					{/* List will be generated dynamically by maping an array of data (JSON files temporary, later GraphCMS) into JSX elements */}
-  					<ul>
-  						{["blog-post-1", "blog-post-2", "blog-post-3"].map(item => (
-  							<li key={item}>
-  								<Link href="/blog/blog-post-dynamic">
-  									Blog Post Dynamic
-  								</Link>
-  							</li>
-  						))}
-  					</ul>
+						{["1", "2", "3"].map(item => (
+							<div key={item}>
+								<Link href="/blog/blog-post-dynamic">
+									Blog Post Dynamic
+								</Link>
+							</div>
+						))}
 
 
 
