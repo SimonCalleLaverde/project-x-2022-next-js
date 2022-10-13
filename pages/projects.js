@@ -71,7 +71,7 @@ export default function ProjectsPage({ allProjects }) {
       <Header/>
 
       <main>
-        <section className="projects-projects-section">
+        <section className="OLD-section">
           <div className="container">
 
 
@@ -98,6 +98,32 @@ export default function ProjectsPage({ allProjects }) {
 
 
 
+          </div>
+        </section>
+
+        <section className="projectspage-projects-section">
+          <div className="container">
+            {/* Mapping through "allProjects" and displaying each "project", in a "ProjectCard" component */}
+            {allProjects.map(project => (
+              <ProjectCard
+                key={project.id}
+                title={project.title}
+                slug={project.slug}
+                nameForThumbnail={project.nameForThumbnail}
+                client={project.client}
+                thumbnailImage={project.thumbnailImage}
+                headerImage={project.headerImage}
+                platforms={project.platforms}
+                year={project.year}
+                roles={project.roles}
+                webLaunchUrl={project.webLaunchUrl}
+                webImages={project.webImages}
+                type={project.type}
+                category={project.category}
+                tags={project.tags}
+                content={project.content}
+              />
+            ))}
           </div>
         </section>
       </main>

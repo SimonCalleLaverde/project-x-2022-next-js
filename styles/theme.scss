@@ -355,13 +355,13 @@ main {
   //justify-content:center;//Was Starting With NextJS
   //align-items:center;//Was Starting With NextJS
   min-height:80vh;//Temporary
-  border-top:1px solid theme-color("grey-dark");//Temporary
-  border-bottom:1px solid theme-color("grey-dark");//Temporary
 }
 
 // Section
 section {
-  min-height:40vh;//Temporary
+  min-height:50vh;//Temporary
+  border-top:1px dashed purple;//Temporary
+  border-bottom:1px dashed green;//Temporary
 }
 
 // Footer

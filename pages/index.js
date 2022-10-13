@@ -66,10 +66,8 @@ export async function getStaticProps() {
 export default function HomePage({ allProjects }) {
   return (
     <>
-
-
-
-      {/* To Check <Head/> As I Was Doing In My "portfolio-V3-2022-next-js" */}
+      {/* To Later Revise <Head/> As I Was Doing In My "portfolio-V3-2022-next-js" In GitHub */}
+      {/* To Revise Styles And Add To Document Instead, As Per Warning/Docs */}
       <Head>
         <title>Portfolio V3 2022 NextJS</title>
         <meta name="description" content="Portfolio V3 2022 NextJS using GraphCMS."/>
@@ -84,13 +82,14 @@ export default function HomePage({ allProjects }) {
         <link href="https://db.onlinewebfonts.com/c/4c4c08af466e9ad071b6d69cf44093df?family=Saol+Display+Regular" rel="stylesheet" type="text/css"/>
       </Head>
 
-
-
       <Header/>
 
-      <main>{/*{ styles.main }*/}
-        <section className="home-projects-section">
-          <div className="container">{/*className={ styles.container }*/}{/*Was wrapping "main" before*/}
+      <main>
+        <section className="homepage-example-1-section">
+        </section>
+
+        <section className="homepage-projects-section">
+          <div className="container">
             {/* Mapping through "allProjects" and displaying each "project", in a "ProjectCard" component */}
             {allProjects.map(project => (
               <ProjectCard
@@ -113,6 +112,12 @@ export default function HomePage({ allProjects }) {
               />
             ))}
           </div>
+        </section>
+
+        <section className="homepage-example-3-section">
+        </section>
+
+        <section className="homepage-example-4-section">
         </section>
       </main>
 
