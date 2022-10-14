@@ -71,7 +71,7 @@ export default function ProjectsPage({ allProjects }) {
       <Header/>
 
       <main>
-        <section className="OLD-section">
+        <section className="OLD-example-section">
           <div className="container">
 
 

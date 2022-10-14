@@ -1,14 +1,14 @@
 // Imports
 
-// Header (HomePage) Component
+// Header (ProjectPage) Component
 export default function Header() {
-  return (
+	return (
     <header className="display-flex justify-content-center align-items-center text-align-center">{/*flex-direction-row*/}
       <div className="container">
         <h1 className="headline">
-          Portfolio V3 2022 NextJS
+          Project (Page) (Dynamic) Component
         </h1>
       </div>
     </header>
-  )
+	)
 };

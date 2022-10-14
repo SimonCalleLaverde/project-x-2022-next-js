@@ -68,6 +68,7 @@ export default function HomePage({ allProjects }) {
     <>
       {/* To Later Revise <Head/> As I Was Doing In My "portfolio-V3-2022-next-js" In GitHub */}
       {/* To Revise Styles And Add To Document Instead, As Per Warning/Docs */}
+      {/* To add meta-tags, etc. <Head/> builds lots of stuff already like "<meta charset='utf-8'>", "<meta name='viewport' content='width=device-width'>", some "<script></script>", "<noscript></noscript>", "<style></style>", and so. So to be careful for not repeated stuff */}
       <Head>
         <title>Portfolio V3 2022 NextJS</title>
         <meta name="description" content="Portfolio V3 2022 NextJS using GraphCMS."/>

@@ -71,7 +71,7 @@ export default function BlogPage({ allProjects }) {
       <Header/>
 
       <main>
-        <section className="OLD-section">
+        <section className="OLD-example-section">
           <div className="container">
 
 

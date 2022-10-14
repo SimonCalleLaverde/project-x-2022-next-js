@@ -1,39 +1,97 @@
-// B A S E D   I N
-// - - - - - - - G R A P H   C M S   D E V   E D   E X A M P L E   [slug].js - - - - - - - //
+// - - - - - - - B A S E D   I N   G R A P H   C M S   D E V   E D ' S   E X A M P L E   "stuff/[[SLUG]].js" - - - - - - - //
+// - - - - - - - &   N O W   I N   "pages/blog.js"   T O O - - - - - - - //
 
 // Imports
 import Head from "next/head";
-//import styles from "../../styles/Slug.module.css";
+import Link from "next/link";
+import Image from "next/image";
+import Header from "../../components/blogpost/Header.js";
+import Footer from "../../components/Footer.js";
 import { GraphQLClient, gql } from "graphql-request";
 
-// THIS PART BELOW IS BEING USED TO FETCH USING GRAPHCMS (THE REST IS THE SAME IN THE OTHER TWO NON-GRAPHCMS EXAMPLES)
+//----------------------------------THIS PART BELOW IS FETCHING CONTENT USING GRAPHCMS [START]----------------------------------//
 
 // API Access Endpoint Token (Found at: "GraphCMS > Project > Project Settings > API Access > Content API")
 const accessEndpoint = "https://api-us-east-1.hygraph.com/v2/cl5ketcvx2wnm01ta90nhcdmy/master";
 const graphCMSRequestAPI = new GraphQLClient(accessEndpoint);
 
+// Querying With GraphQL
+const graphCMSQuery = gql`
+  {
+    projects {
 
+      id
+      title
+      slug
+      nameForThumbnail
+      client
+      thumbnailImage {
+        url
+      }
+      headerImage {
+        url
+      }
+      platforms
+      year
+      roles
+      webLaunchUrl
+      webImages {
+        url
+      }
+      type
+      category
+      tags
+      content {
+        text
+      }
+
+    }
+  }
+`;
+
+
+
+
+// Getting All The Blog Post Slugs
+
+
+
+// GET STATIC PATHS
+
+
+
+// GET STATIC PROPS
+
+
+
+
+//----------------------------------THIS PART ABOVE IS FETCHING CONTENT USING GRAPHCMS [END]----------------------------------//
 
 // BlogPost (Page) (Dynamic) Component
-export default function BlogPostPage({  }) {
+export default function BlogPostPage() {
   return (
     <>
-      <Head>
-        <title></title>
-        {/* To add meta-tags, etc. <Head/> builds lots of crap already like "<meta charset='utf-8'>", "<meta name='viewport' content='width=device-width'>", some "<script></script>", "<noscript></noscript>", "<style></style>", and so. So to be careful for not repeated stuff */}
-      </Head>
+      {/* <Head></Head> Will Go Here */}
+
+      <Header/>
 
       <main>
-        <section>
+        <section className="blogpostpage-articles-section">
+          <div className="container">
 
 
 
-          <h1>BlogPost (Page) (Dynamic) Component</h1>
+
+            <h1>BlogPost (Page) (Dynamic) Component</h1>
 
 
 
+
+          </div>
         </section>
       </main>
+
+      <Footer/>
     </>
   )
 };
