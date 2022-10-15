@@ -15,10 +15,10 @@ import { GraphQLClient, gql } from "graphql-request";
 const accessEndpoint = "https://api-us-east-1.hygraph.com/v2/cl5ketcvx2wnm01ta90nhcdmy/master";
 const graphCMSRequestAPI = new GraphQLClient(accessEndpoint);
 
-// Querying With GraphQL
+// Querying With GraphQL (The Specific Project That The Slug Matches)
 const graphCMSQuery = gql`
-  {
-    projects {
+  query Project($slug: String!) {
+    project(where: {slug: $slug}) {
 
       id
       title
@@ -49,18 +49,46 @@ const graphCMSQuery = gql`
   }
 `;
 
+// Getting All The Project Slugs
 
 
 
-// Getting All The Blog Post Slugs
 
+const SLUGLIST = gql`
+  {
+    projects {
+      slug
+    }
+  }
+`;
 
+// IMPLEMENTING "STATIC SITE GENERATION" BELOW (WITH "getStaticPaths" & "getStaticProps")
 
 // GET STATIC PATHS
+export async function getStaticPaths() {
+  const projects = await graphCMSRequestAPI.request(SLUGLIST)
 
+  const paths = projects.map(project => { params: { slug: project.slug } })
 
+  return {
+    paths,//This is same than "paths: paths"
+    fallback: false
+  }
+};
 
 // GET STATIC PROPS
+export async function getStaticProps({ params }) {
+  const slug = params.slug
+  const requestBlogPost = await graphCMSRequestAPI.request(graphCMSQuery, { slug });
+  const postData = requestBlogPost.project;
+
+  return {
+    props: {
+      postData
+    }//,
+    //revalidate: 10
+  }
+};
 
 
 

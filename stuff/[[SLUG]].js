@@ -63,7 +63,8 @@ export async function getStaticPaths() {
 
 // GET STATIC PROPS
 export async function getStaticProps({ params }) {
-  const requestBlogPost = await graphCMSRequestAPI.request(graphCMSQuery, {params.slug});
+  const slug = params.slug
+  const requestBlogPost = await graphCMSRequestAPI.request(graphCMSQuery, { slug });
   const postData = requestBlogPost.post;
 
   return {
