@@ -49,11 +49,7 @@ const graphCMSQuery = gql`
   }
 `;
 
-// Getting All The Project Slugs
-
-
-
-
+// Getting All The Projects' Slugs
 const SLUGLIST = gql`
   {
     projects {
@@ -66,40 +62,38 @@ const SLUGLIST = gql`
 
 // GET STATIC PATHS
 export async function getStaticPaths() {
-  const projects = await graphCMSRequestAPI.request(SLUGLIST)
-
-  const paths = projects.map(project => { params: { slug: project.slug } })
+  const { projects } = await graphCMSRequestAPI.request(SLUGLIST);
 
   return {
-    paths,//This is same than "paths: paths"
+    paths: projects.map(project => ({ params: { slug: project.slug } })),
     fallback: false
   }
 };
 
 // GET STATIC PROPS
 export async function getStaticProps({ params }) {
-  const slug = params.slug
+  const slug = params.slug;
   const requestBlogPost = await graphCMSRequestAPI.request(graphCMSQuery, { slug });
-  const postData = requestBlogPost.project;
+  const projectData = requestBlogPost.project;
 
   return {
     props: {
-      postData
+      projectData
     }//,
     //revalidate: 10
   }
 };
 
-
-
-
 //----------------------------------THIS PART ABOVE IS FETCHING CONTENT USING GRAPHCMS [END]----------------------------------//
 
 // BlogPost (Page) (Dynamic) Component
-export default function BlogPostPage() {
+export default function BlogPostPage({ projectData }) {
   return (
     <>
       {/* <Head></Head> Will Go Here */}
+      <Head>
+        <title>{ projectData.title }</title>
+      </Head>
 
       <Header/>
 
@@ -110,7 +104,24 @@ export default function BlogPostPage() {
 
 
 
-            <h1>BlogPost (Page) (Dynamic) Component</h1>
+            <h1>BlogPost (Page) (Dynamic) Componenttttt</h1>
+            <h2>{ projectData.title }</h2>
+
+
+
+            {/*<img src={ projectData.coverPhoto.url } alt=""/>
+
+            <div>
+              <img src={ projectData.author.avatar.url } alt=""/>
+
+              <div>
+                <h6>By { projectData.author.name }</h6>
+                <small>{ projectData.datePublished }</small>
+              </div>
+            </div>
+
+            <div dangerouslySetInnerHTML={{ __html: projectData.content.html }}>
+            </div>*/}
 
 
 
