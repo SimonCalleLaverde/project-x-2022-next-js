@@ -104,24 +104,83 @@ export default function BlogPostPage({ projectData }) {
 
 
 
-            <h1>BlogPost (Page) (Dynamic) Componenttttt</h1>
-            <h2>{ projectData.title }</h2>
+            {/* AS PER MY "NextJS Blog GraphCMS" EXAMPLE */}
+            <h1>{ projectData.title }</h1>
 
-
-
-            {/*<img src={ projectData.coverPhoto.url } alt=""/>
-
-            <div>
-              <img src={ projectData.author.avatar.url } alt=""/>
-
-              <div>
-                <h6>By { projectData.author.name }</h6>
-                <small>{ projectData.datePublished }</small>
-              </div>
+            <div dangerouslySetInnerHTML={{ __html: projectData.content.text }}>
             </div>
 
-            <div dangerouslySetInnerHTML={{ __html: projectData.content.html }}>
-            </div>*/}
+
+
+
+            {/* AS PER HOMEPAGE */}
+            <h1>Title: { projectData.title }</h1>
+
+            {/*<Image src={headerImage.url} alt={`${title} Project's Header Image`} layout="fill"/>*/}{/* Must use "width" & "height" properties or "layout='fill'" property */}
+            <img src={projectData.headerImage.url} alt={`${projectData.title} Project's Header Image`}/>
+
+            <div className="project-caption">
+              <h4>Client: {projectData.client}</h4>
+              <br/>
+
+              <Image src={projectData.thumbnailImage.url} alt={`${projectData.title} Project's Thumbnail Image`} width="120" height="90"/>
+              <h4>Name For Thumbnail: {projectData.nameForThumbnail}</h4>
+              <br/>
+
+              <h4>Year: {projectData.year}</h4>
+              <h4>Type: {projectData.type}</h4>
+              <h4>Category: {projectData.category}</h4>
+              <h4>Slug: {projectData.slug}</h4>
+              <h4>Web Launch URL: {projectData.webLaunchUrl}</h4>
+              <br/>
+
+              <p>Content: {projectData.content.text}</p>
+              <br/>
+
+              <h6 className="mb-0" style={{color: "green"}}>Multiple Values:</h6>
+              <h5 className="mt-0">
+                {/*Web Image [Index "0"]:<br/>{webImages[0].url}*/}
+                WEB IMAGES:
+                {projectData.webImages.map(image => (
+                  <div key={image.url}>
+                    {image.url}
+                  </div>
+                ))}
+              </h5>
+              <br/>
+
+              <h6 className="mb-0" style={{color: "green"}}>Multiple Values:</h6>
+              <h5 className="mt-0">
+                PLATFORMS:
+                {projectData.platforms.map(platform => (
+                  <div key={platform}>
+                    {platform}
+                  </div>
+                ))}
+              </h5>
+              <br/>
+
+              <h6 className="mb-0" style={{color: "green"}}>Multiple Values:</h6>
+              <h5 className="mt-0">
+                ROLES:
+                {projectData.roles.map(role => (
+                  <div key={role}>
+                    {role}
+                  </div>
+                ))}
+              </h5>
+              <br/>
+
+              <h6 className="mb-0" style={{color: "green"}}>Multiple Values:</h6>
+              <h5 className="mt-0">
+                TAGS:
+                {projectData.tags.map(tag => (
+                  <div key={tag}>
+                    {tag}
+                  </div>
+                ))}
+              </h5>
+            </div>
 
 
 
