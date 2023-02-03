@@ -6,7 +6,7 @@ export default function Header() {
     <header className="display-flex justify-content-center align-items-center text-align-center">{/*flex-direction-row*/}
       <div className="container">
         <h1 className="headline">
-          Portfolio V3 2022 NextJS
+          Portfolio V3 2023 NextJS
         </h1>
       </div>
     </header>
